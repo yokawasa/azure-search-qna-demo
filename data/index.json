@@ -1,0 +1,27 @@
+{
+    "name": "qna",
+    "fields": [
+        { "name":"id", "type":"Edm.String", "key":true, "retrievable":true, "searchable":false, "filterable":false, "sortable":false, "facetable":false }, 
+        { "name":"question", "type":"Edm.String", "retrievable":true, "searchable":true, "filterable":false, "sortable":false, "facetable":false,"analyzer":"ja.lucene"},
+        { "name":"answer", "type":"Edm.String", "retrievable":true, "searchable":true, "filterable":false, "sortable":false, "facetable":false,"analyzer":"ja.lucene"},
+        { "name":"category", "type":"Edm.String", "retrievable":true, "searchable":false, "filterable":true, "sortable":true, "facetable":true }
+     ],
+     "suggesters": [
+        { "name":"questionsg", "searchMode":"analyzingInfixMatching", "sourceFields":["question"] }
+     ],
+     "scoringProfiles": [
+         {
+            "name": "weightedFields",
+            "text": {
+                "weights": {
+                    "question": 9,
+                    "answer": 1
+                }
+            }
+        }
+     ],
+     "corsOptions": {
+        "allowedOrigins": ["*"],
+        "maxAgeInSeconds": 300
+    }
+}

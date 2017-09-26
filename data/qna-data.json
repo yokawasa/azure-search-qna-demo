@@ -1,0 +1,1630 @@
+{
+    "value": [
+        {
+            "answer": "\\n\\nAzure Cosmos DB は、グローバルにレプリケートされたマルチモデル データベース サービスです。スキーマフリーのデータに対する豊富なクエリを提供し、構成可能で信頼性の高いパフォーマンスと迅速な開発を実現します。 これらはすべて、Microsoft Azure の強力な機能と守備範囲に支えられた管理プラットフォームを通じて実現されます。\\n\\nAzure Cosmos DB は、予測可能なスループット、高可用性、低待機時間、スキーマフリー データ モデルが重要な要件となる、Web、モバイル、ゲーム、IoT の各アプリケーションに最適なソリューションです。 スキーマの柔軟性と豊富なインデックス作成機能を備え、統合 JavaScript によるマルチドキュメント トランザクションをサポートします。\\n\\nデータベース質問および回答の詳細と、このサービスのデプロイおよび使用の手順については、[Azure Cosmos DB ドキュメント ページ](https://azure.microsoft.com/documentation/services/cosmos-db/)をご覧ください。\\n",
+            "category": "CosmosDB",
+            "id": "37e308d0-c62f-45b5-b953-363c3b77c1ea",
+            "question": "Azure Cosmos DB とは何ですか?"
+        },
+        {
+            "answer": "DocumentDB API は、Azure Cosmos DB でサポートされている API の 1 つであり、データ モデルの 1 つです。 さらに、Azure Cosmos DB は、Graph API (プレビュー)、Table API (プレビュー)、MongoDB API もサポートしています。 詳細については、「[DocumentDB のお客様からの質問](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/#moving-to-cosmos-db)",
+            "category": "CosmosDB",
+            "id": "7f3426c2-9337-4207-9417-b0c5419b36af",
+            "question": "DocumentDB はどうなりましたか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は、自動スケール、予測可能なパフォーマンス、ミリ秒レベルの高速応答時間、スキーマフリー データに対してクエリを実行できることが重要である、新しい Web、モバイル、ゲーム、IoT の各アプリケーションに適しています。 Azure Cosmos DB は迅速な開発に役立ち、アプリケーション データ モデルの継続的な反復をサポートします。 ユーザーが生成したコンテンツとデータを管理するアプリケーションは、[Azure Cosmos DB の一般的なユース ケース](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/use-cases.md)です。",
+            "category": "CosmosDB",
+            "id": "6489858d-b3fa-44cc-814f-0f170d545619",
+            "question": "Azure Cosmos DB の一般的なユース ケースを教えてください。"
+        },
+        {
+            "answer": "[要求ユニット](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/request-units.md) (RU) とは、Azure Cosmos DB におけるスループットの単位です。 1 RU のスループットは、1 KB のドキュメントを取得するスループットに相当します。 Azure Cosmos DB におけるすべての操作 (読み取り、書き込み、SQL クエリ、ストアド プロシージャの実行など) には、操作を完了するために必要なスループットに基づいて明確な RU 値が設定されています。 CPU、IO、メモリや、これらがアプリケーションのスループットに及ぼす影響について考えるのではなく、RU という 1 つの単位を基にして考えることができます。\\n\\n各 Azure Cosmos DB コンテナーは、1 秒あたりのスループットを表す RU を単位として、プロビジョニング スループットを使用して予約できます。 あらゆる規模のアプリケーションで、個々の要求のベンチマークを実行して RU 値を測定し、すべての要求の要求ユニットの合計に対処できるようにコンテナーをプロビジョニングできます。 アプリケーションのニーズの進化に合わせて、コンテナーのスループットをスケールアップまたはスケールダウンすることもできます。 要求ユニットの詳細とコンテナーのニーズを判断する方法については、「[スループットのニーズの推定](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/request-units.md#estimating-throughput-needs)」を参照し、[スループット計算ツール](https://www.documentdb.com/capacityplanner)をお試しください。 ここで言う \"コンテナー\" とは、DocumentDB API のコレクション、Graph API のグラフ、MongoDB API のコレクション、Table API のテーブルを指します。",
+            "category": "CosmosDB",
+            "id": "3696f448-e7fc-4b58-87d4-1721b3e733b4",
+            "question": "Azure Cosmos DB では、予測可能なパフォーマンスをどのようにして実現していますか?"
+        },
+        {
+            "answer": "キー/値 (テーブル)、多桁式、ドキュメント、およびグラフ データ モデルは、Azure Cosmos DB のベースである ARS (アトム、レコード、およびシーケンス) 設計のため、すべてネイティブにサポートされています。 アトム、レコード、およびシーケンスは、さまざまなデータ モデルに容易にマップしたり投影したりできます。 モデルのサブセット用の API は今すぐ使用でき (DocumentDB、MongoDB、Table、および Graph API)、追加のデータ モデルに固有のその他の API は将来使用可能になります。\\n\\nAzure Cosmos DB は、開発者にスキーマやセカンダリ インデックスを要求することなく、取り込んだすべてのデータを自動的にインデックス作成できるスキーマ独立型インデックス作成エンジンを備えています。 このエンジンは、インデックスおよびクエリ処理サブシステムから記憶域のレイアウトを分離する一連の論理インデックス レイアウト (転置、多桁式、ツリー) に依存しています。 Cosmos DB はまた、一連のワイヤ プロトコルおよび API を拡張可能な方法でサポートし、それらをコア データ モデル (1) と論理インデックス レイアウト (2) に効率的に変換することにより、一意に複数のデータ モデルをネイティブにサポートできるようになる機能も備えています。",
+            "category": "CosmosDB",
+            "id": "a7b471d5-f415-437c-aea8-42b9d356efad",
+            "question": "Azure Cosmos DB は、キー/値、多桁式、ドキュメント、グラフなどのさまざまなデータ モデルをどのようにサポートしていますか?"
+        },
+        {
+            "answer": "はい。Azure Cosmos DB は HIPAA 準拠です。 HIPAA は、個別に識別できる医療情報の使用、開示、および保護するための要件を確立しています。 詳細については、[Microsoft セキュリティ センター](https://www.microsoft.com/en-us/TrustCenter/Compliance/HIPAA)を参照してください。",
+            "category": "CosmosDB",
+            "id": "b064e55f-1258-43da-9dfd-4d2ad009dfac",
+            "question": "Azure Cosmos DB は HIPAA 準拠ですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB でコンテナーが格納できるデータの合計量に制限はありません。",
+            "category": "CosmosDB",
+            "id": "fda4f480-a96b-42e5-88a9-88c10f500334",
+            "question": "Azure Cosmos DB のストレージの制限を教えてください。"
+        },
+        {
+            "answer": "Azure Cosmos DB でコンテナーがサポートできるスループットの総量に制限はありません。 基本的な考え方は、十分な数のパーティション キーにワークロードをほぼ均等に分散させることです。",
+            "category": "CosmosDB",
+            "id": "8f24fb5b-b2ec-4b2a-b9bd-1d36b6cd072d",
+            "question": "Azure Cosmos DB のスループットの制限を教えてください。"
+        },
+        {
+            "answer": "\\n\\n支援が必要な場合は、[Stack Overflow](http://stackoverflow.com/questions/tagged/azure-cosmosdb) または [MSDN フォーラム](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDocumentDB)を利用するか、[askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com) にメールを送って、Azure Cosmos DB エンジニアリング チームとの 1 対 1 のチャットをスケジュールしてください。\\n\\n## Azure Cosmos DB の設定\\n\\n",
+            "category": "CosmosDB",
+            "id": "87a770e0-68a1-4ee3-acc7-67908540d497",
+            "question": "Azure Cosmos DB に関するその他の支援を得るにはどうすればよいですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は Azure Portal で利用できます。 まず、Azure サブスクリプションにサインアップします。 サインアップしたら、DocumentDB API、Graph API (プレビュー)、Table API (プレビュー)、または MongoDB API のアカウントを Azure サブスクリプションに追加できます。",
+            "category": "CosmosDB",
+            "id": "122b4a63-b7a0-4468-a085-43e4bc3920cd",
+            "question": "Azure Cosmos DB にサインアップするにはどうすればよいですか?"
+        },
+        {
+            "answer": "マスター キーは、アカウントのすべてのリソースにアクセスするためのセキュリティ トークンです。 キーを保持する個人には、データベース アカウント内のすべてのリソースへの読み取り/書き込みアクセスが許可されます。 マスター キーを配布するときには十分な注意が必要です。 プライマリ マスター キーとセカンダリ マスター キーは、[Azure Portal](https://portal.azure.com/) の [キー] ブレードで入手できます。 リソース キーの詳細については、「 [アクセス キーを表示、コピー、および再生成する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/manage-account.md#keys)」を参照してください。",
+            "category": "CosmosDB",
+            "id": "4aae345a-2e57-4539-9701-3818cfa66fc2",
+            "question": "マスター キーとは何ですか?"
+        },
+        {
+            "answer": "PreferredLocations 値は、Cosmos DB を利用できる Azure リージョンのいずれかに設定できます。 利用可能なリージョンの一覧については、「[Azure リージョン](https://azure.microsoft.com/regions/)",
+            "category": "CosmosDB",
+            "id": "2e994d5b-bc61-4809-92d8-4c18df5aa076",
+            "question": "PreferredLocations として設定できるリージョンを教えてください。"
+        },
+        {
+            "answer": "Azure Cosmos DB は、「[Azure リージョン](https://azure.microsoft.com/regions/)」ページに記載されているすべての Azure リージョンにわたって存在します。 Azure Cosmos DB はコア サービスであるため、すべての新しいデータ センターに Azure Cosmos DB が存在することになります。\\n\\nリージョンを設定するときは、Azure Cosmos DB では主権のあるクラウドと政府機関のクラウドが重視されることに注意してください。 つまり、独立リージョンにアカウントを作成した場合、その独立リージョンの外部にレプリケートすることはできません。 同様に、外部のアカウントから他の独立した場所へのレプリケーションを有効にすることはできません。",
+            "category": "CosmosDB",
+            "id": "70da77a5-ea88-4e6f-9fe6-643cbbd7935a",
+            "question": "Azure のデータ センター経由で世界中にデータを配布するときに注意すべきことはありますか?"
+        },
+        {
+            "answer": "はい。DocumentDB API では、スキーマ定義やヒントを必要とせずに、アプリケーションが任意の JSON ドキュメントを格納できます。 データは、Azure Cosmos DB SQL クエリ インターフェイスを使用してクエリにすぐに使用できます。",
+            "category": "CosmosDB",
+            "id": "11f43fd7-09bb-4f26-ad68-bace5c04559c",
+            "question": "DocumentDB API データベースはスキーマフリー データをサポートしていますか?"
+        },
+        {
+            "answer": "はい。DocumentDB API では、JavaScript のストアド プロシージャとトリガーとして表現されるクロス ドキュメント トランザクションをサポートしています。 トランザクションは、各コレクション内の単一のパーティションを対象とし、他の同時実行されるコードおよびユーザー要求から \"完全に\" 分離された ACID セマンティクスで実行されます。 JavaScript アプリケーション コードのサーバー側実行により例外がスローされた場合は、トランザクション全体がロールバックされます。 トランザクションの詳細については、「 [プログラム データベース トランザクション](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/programming.md#database-program-transactions)",
+            "category": "CosmosDB",
+            "id": "d4b888d6-18fa-49b2-a09b-0e1bb1338e69",
+            "question": "DocumentDB API は ACID トランザクションをサポートしていますか?"
+        },
+        {
+            "answer": "\\n\\nコレクションとは、ドキュメントと、関連する JavaScript アプリケーション ロジックのグループです。 コレクションは課金対象のエンティティであり、その[コスト](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/performance-levels.md)は、スループットと使用しているストレージによって決まります。 コレクションは、1 つ以上のパーティションまたはサーバーにまたがって存在することができ、拡張性があるので、対応できるストレージまたはスループットの量には実質的に制限はありません。\\n\\nコレクションは、Azure Cosmos DB の課金エンティティでもあります。 各コレクションは、プロビジョニング済みスループットと使用されたストレージ領域に基づいて時間単位で課金されます。 詳細については、「[Azure Cosmos DB の価格](https://azure.microsoft.com/pricing/details/cosmos-db/)\\n",
+            "category": "CosmosDB",
+            "id": "e0b8f3e9-f1bf-47e5-a174-fc0e0ba121b9",
+            "question": "コレクションとは何ですか?"
+        },
+        {
+            "answer": "ユーザーとアクセス許可は、[Cosmos DB API SDK](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/documentdb-sdk-dotnet.md) または [REST API](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/rest/api/documentdb) のいずれかを使用して作成できます。",
+            "category": "CosmosDB",
+            "id": "a4d6187b-4dc0-4e93-93ef-7ba71d56d55f",
+            "question": "どのようにしてユーザーおよびアクセス許可を設定しますか?"
+        },
+        {
+            "answer": "SQL クエリ言語は、SQL でサポートされるクエリ機能の強化版サブセットです。 Azure Cosmos DB の SQL クエリ言語は、高度な階層型の関係演算子と、JavaScript ベースのユーザー定義関数 (UDF) による機能拡張を提供します。 JSON 文法では、ラベル付きノードが配置されたツリーとして JSON ドキュメントをモデル化できます。これは、Azure Cosmos DB の自動インデックス作成手法と Azure Cosmos DB の SQL クエリ言語の両方で使用されます。 SQL 文法の使用方法については、[QueryDocumentDB](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/documentdb-sql-query.md)",
+            "category": "CosmosDB",
+            "id": "5e0f59d4-7c0c-4104-b9dd-1952c089e0cb",
+            "question": "DocumentDB API は SQL をサポートしていますか?"
+        },
+        {
+            "answer": "DocumentDB API は、SQL 文法の `COUNT`、`MIN`、`MAX`、`AVG`、`SUM` の各集計関数を使用した、あらゆる規模での低待機時間の集計をサポートしています。 詳細については、「[集計関数](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/documentdb-sql-query.md#Aggregates)」をご覧ください。",
+            "category": "CosmosDB",
+            "id": "70993da3-99b8-4e09-a2f4-8bbb141535dd",
+            "question": "DocumentDB API は SQL 集計関数をサポートしていますか?"
+        },
+        {
+            "answer": "DocumentDB API は、HTTP エンティティ タグ (ETag) によるオプティミスティック同時実行制御 (OCC) をサポートしています。 すべての DocumentDB API リソースに ETag があり、ドキュメントが更新されるたびにサーバーで ETag が設定されます。 すべての応答メッセージに ETag ヘッダーと現在の値が含まれます。 ETag を If-Match ヘッダーと共に使用することで、サーバーはリソースを更新する必要があるかどうかを判断できるようになります。 If-Match 値は、チェック対象の ETag 値です。 対象の ETag 値がサーバーの ETag 値と一致する場合に、リソースが更新されます。 ETag が最新ではない場合、サーバーは操作を拒否して \"HTTP 412 Precondition failure\" 応答コードを返します。 この場合、クライアントは、リソースを再フェッチしてリソースの最新の ETag 値を取得します。 また、ETag を If-None-Match ヘッダーと共に使用すると、リソースの再フェッチが必要かどうかを判断できます。\\n\\n.NET でオプティミスティック同時実行制御を使用するには、 [AccessCondition](https://msdn.microsoft.com/library/azure/microsoft.azure.documents.client.accesscondition.aspx) クラスを使用します。 .NET サンプルについては、GitHub にある DocumentManagement サンプルの [Program.cs](https://github.com/Azure/azure-documentdb-dotnet/blob/master/samples/code-samples/DocumentManagement/Program.cs) を参照してください。",
+            "category": "CosmosDB",
+            "id": "19547477-099d-4f8f-9fa9-78c5e0cfaf4b",
+            "question": "DocumentDB API はどのようにして同時実行を提供しますか?"
+        },
+        {
+            "answer": "DocumentDB API は、JavaScript のストアド プロシージャとトリガーによる、統合言語のトランザクションをサポートしています。 スクリプト内のすべてのデータベース操作は、スナップショット分離下で実行されます。 単一パーティション コレクションの場合は、コレクションが実行対象となります。 コレクションがパーティション分割されている場合は、コレクション内の同じパーティション キー値を持つドキュメントが実行対象となります。 ドキュメント バージョン (ETag) のスナップショットは、トランザクションの開始時に取得され、スクリプトが成功された場合のみコミットされます。 JavaScript がエラーをスローした場合、トランザクションはロールバックされます。 詳細については、「[Azure Cosmos DB のサーバー側プログラミング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/programming.md)",
+            "category": "CosmosDB",
+            "id": "0d2fe11d-8c4f-4447-9c3b-53bab3bd03d6",
+            "question": "DocumentDB API でトランザクションを実行するにはどうすればよいですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB へのドキュメントの一括挿入は、次のいずれかの方法で実行できます。\\n\\n*   データ移行ツール。[Azure Cosmos DB 用のデータベース移行ツール](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/import-data.md)に関する記事で説明されています。\\n*   ストアド プロシージャ。[Azure Cosmos DB のサーバー側 JavaScript プログラミング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/programming.md)に関する記事で説明されています。",
+            "category": "CosmosDB",
+            "id": "dc540659-ebe1-4f68-831b-c0f462c0ab53",
+            "question": "ドキュメントを Cosmos DB に一括挿入するにはどうすればよいですか?"
+        },
+        {
+            "answer": "はい。Azure Cosmos DB は RESTful サービスであるため、リソース リンクは不変であり、キャッシュできます。 DocumentDB API クライアントは、ドキュメントやコレクションなどのリソースに対する読み取りに \"If-None-Match\" ヘッダーを指定し、サーバー バージョンが変更されたらローカル コピーを更新できます。",
+            "category": "CosmosDB",
+            "id": "bf9c9031-a89e-4cbe-88ca-7e8061c44337",
+            "question": "DocumentDB API はリソース リンク キャッシュをサポートしていますか?"
+        },
+        {
+            "answer": "はい。 [Azure Cosmos DB Emulator](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/local-emulator.md) には、Cosmos DB サービスの高忠実度エミュレーションが用意されています。 JSON ドキュメントの作成とクエリ、コレクションのプロビジョニングとスケーリング、ストアド プロシージャとトリガーの実行のサポートなど、Azure Cosmos DB と同じ機能がサポートされています。 Azure Cosmos DB Emulator を使用してアプリケーションの開発とテストを行い、Azure Cosmos DB の接続エンドポイントの構成を 1 つ変更するだけで、世界規模で Azure にデプロイできます。\\n\\n## MongoDB 用 API に対する開発\\n\\n",
+            "category": "CosmosDB",
+            "id": "e92362ea-4f67-4a26-821c-f3ffebb15849",
+            "question": "DocumentDB API のローカル インスタンスは使用できますか?"
+        },
+        {
+            "answer": "Azure Cosmos DB の MongoDB 用 API は、コミュニティでサポートされる既存の Apache MongoDB API とドライバーを使用して、アプリケーションがネイティブの Azure Cosmos DB データベース エンジンと簡単かつ透過的に通信できるようにする互換性レイヤーです。 開発者は、既存の MongoDB ツール チェーンとスキルを使って、Azure Cosmos DB を活用するアプリケーションを構築できるようになりました。 これにより、自動インデックス作成、バックアップ メンテナンス、利用料金に基づくサービス レベル アグリーメント (SLA) など、Azure Cosmos DB の独自の機能によるメリットが得られます。",
+            "category": "CosmosDB",
+            "id": "af19017e-1c72-4b34-b121-9b7efa91cc4a",
+            "question": "Azure Cosmos DB の MongoDB 用 API とは何ですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB の MongoDB 用 API に接続する最も簡単な方法は、[Azure Portal](https://portal.azure.com/) を使用することです。 アカウントに移動し、左側のナビゲーション メニューで [クイック スタート] をクリックします。 クイック スタートは、コード スニペットを取得してデータベースに接続するための最善の方法です。\\n\\nAzure Cosmos DB では、厳密なセキュリティ要件と基準が適用されます。 Azure Cosmos DB アカウントでは、SSL による認証とセキュリティで保護された通信が要求されるので、必ず TLSv1.2 を使用してください。\\n\\n詳細については、[MongoDB 用 API データベースへの接続](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/connect-mongodb-account.md)\\n",
+            "category": "CosmosDB",
+            "id": "e577e8c2-e580-43cf-ab15-9805338818ee",
+            "question": "MongoDB 用 API データベースに接続するにはどうすればよいですか?"
+        },
+        {
+            "answer": "MongoDB 用 API には、一般的な MongoDB エラー コードのほかに、独自のエラー コードがあります。\\nエラーコード説明解決策TooManyRequests16500使用された要求ユニットの合計数が、コレクションのプロビジョニング済み要求ユニット レートを超えたため調整されました。Azure Portal でのコレクションのスループットのスケーリングか、再試行を検討してください。ExceededMemoryLimit16501マルチ テナント サービスとして、操作がクライアントのメモリ配分を超えました。より制限の厳しいクエリ条件によって操作のスコープを減らすか、[Azure Portal](https://portal.azure.com/?#blade/Microsoft_Azure_Support/HelpAndSupportBlade) からサポートに連絡してください。 例: db.getCollection('users').aggregate([ {$match: {name: \"Andy\"}},  {$sort: {age: -1}} ]))",
+            "category": "CosmosDB",
+            "id": "316d82cf-8bcf-49d2-89a6-19a4047d669a",
+            "question": "MongoDB 用 API にはその他のエラー コードはありますか?"
+        },
+        {
+            "answer": "次のいずれかの方法でフィードバックをお寄せください。\\n\\n*   [Uservoice](https://feedback.azure.com/forums/599062-azure-cosmos-db-table-api)\\n\\n*   [MSDN フォーラム](https://social.msdn.microsoft.com/forums/azure/en-US/home?forum=AzureDocumentDB)\\n*   [StackOverflow](http://stackoverflow.com/questions/tagged/azure-cosmosdb)",
+            "category": "CosmosDB",
+            "id": "80f8affc-807e-4318-97d4-1bc572fb81ba",
+            "question": "SDK やバグに関するフィードバックを提供するにはどうすればよいですか?"
+        },
+        {
+            "answer": "構成設定については、「[Azure Cosmos DB の機能](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/tutorial-develop-table-dotnet.md#azure-cosmos-db-capabilities)」をご覧ください。 設定を変更するには、クライアント アプリケーションの app.config の appSettings セクションに設定を追加します。",
+            "category": "CosmosDB",
+            "id": "83660735-90bf-4d6d-8963-4bd4a91a6d85",
+            "question": "新しい Table API (プレビュー) で、要求オプションの構成設定を上書きするにはどうすればよいですか?"
+        },
+        {
+            "answer": "なし。 既存の Standard Table SDK を使用する既存または新規のお客様を対象とする変更はありません。",
+            "category": "CosmosDB",
+            "id": "0724beb8-e3e4-4e62-9242-49a8ac68ac84",
+            "question": "既存の Standard Table SDK を使用する顧客を対象とする変更はありますか?"
+        },
+        {
+            "answer": "Azure Portal を使用してデータを参照できます。 また、Table API (プレビュー) コードまたは次の回答で説明するツールを使用することもできます。",
+            "category": "CosmosDB",
+            "id": "1565de4a-0794-4096-965a-d5875c98ff9a",
+            "question": "Table API (プレビュー) で使用するために、Azure Cosmos DB に格納されているテーブル データを表示するにはどうすればよいですか?"
+        },
+        {
+            "answer": "以前のバージョンの Azure Explorer (0.8.9) を使用できます。\\n\\n以前に指定した形式の接続文字列を取得する柔軟性を備えたツールは、新しい Table API (プレビュー) に対応します。 テーブル ツールの一覧については、「[Azure Storage クライアント ツール](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/storage/common/storage-explorers.md)\\n",
+            "category": "CosmosDB",
+            "id": "0f60386b-b8e1-4689-a683-fd7dbd195838",
+            "question": "Table API (プレビュー) で動作するのはどのツールですか?"
+        },
+        {
+            "answer": "Table API (プレビュー) 用の PowerShell と Azure CLI のサポートを追加する予定です。",
+            "category": "CosmosDB",
+            "id": "3cf82f39-7ac1-44da-b734-1863c226701d",
+            "question": "PowerShell または Azure CLI は新しい Table API (プレビュー) で動作しますか?"
+        },
+        {
+            "answer": "はい。オプティミスティック同時実行制御は、ETag メカニズムを使用して提供されます。",
+            "category": "CosmosDB",
+            "id": "75d9e695-fbad-49b5-8a30-58c4b3957d10",
+            "question": "操作の同時実行は制御されますか?"
+        },
+        {
+            "answer": "はい。Table API (プレビュー) では、OData クエリと LINQ クエリをサポートしています。",
+            "category": "CosmosDB",
+            "id": "0b6332a8-be11-4571-b187-38384a9690ff",
+            "question": "エンティティの OData クエリ モデルはサポートされていますか?"
+        },
+        {
+            "answer": "はい。同時に接続するには、CloudTableClient の 2 つのインスタンスを作成し、各インスタンスで接続文字列を使用して独自の URI を参照します。",
+            "category": "CosmosDB",
+            "id": "75a2aa13-9b0e-4bcd-bf7d-23e620601266",
+            "question": "同じアプリケーションで Standard Azure Table と新しい Premium Table API (プレビュー) に同時に接続できますか?"
+        },
+        {
+            "answer": "既存の Table Storage データで新しい Table API を利用する場合は、[askcosmosdb@microsoft.com](mailto:askcosmosdb@microsoft.com) までご連絡ください。",
+            "category": "CosmosDB",
+            "id": "81dd1a8b-31a9-4e76-a883-910f8cb0e666",
+            "question": "既存の Azure Table Storage アプリケーションをこの新しいサービスに移行するにはどうすればよいですか?"
+        },
+        {
+            "answer": "GA に向けて、SAS トークン、ServiceContext、統計、クライアント側暗号化、分析などの機能のサポートを追加する予定です。 [UserVoice](https://feedback.azure.com/forums/599062-azure-cosmos-db-table-api) でフィードバックをお寄せください。",
+            "category": "CosmosDB",
+            "id": "fa6cb0be-3789-4bba-90ee-0ca5cfeb5ea1",
+            "question": "このサービスのロードマップを教えてください。Standard Table API の他の機能はいつ提供されますか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は、水平スケーリングを使用して無制限のストレージを提供するように設計されています。 このサービスは、ストレージを監視し、ストレージを効率的に増やすことができます。",
+            "category": "CosmosDB",
+            "id": "49fdfd5d-f8d5-4e25-bc55-87b6e2ab9174",
+            "question": "たとえば、最初は n GB のデータが時間の経過と共に 1 TB に増加した場合、このサービスではストレージ サイズはどのように拡張されるのですか?"
+        },
+        {
+            "answer": "Table API (プレビュー) のメトリック ウィンドウを使用して、要求とストレージ使用量を監視できます。",
+            "category": "CosmosDB",
+            "id": "ff87cd79-156c-41a3-8133-9cfa61f4b7d8",
+            "question": "Table API (プレビュー) を監視するにはどうすればよいですか?"
+        },
+        {
+            "answer": "容量見積もりツールを使用して、操作に必要な TableThroughput を計算できます。 詳細については、「[Estimate Request Units and Data Storage (要求ユニットとデータ ストレージの見積もり)](https://www.documentdb.com/capacityplanner)」をご覧ください。 一般に、エンティティを JSON として表し、操作数を指定します。",
+            "category": "CosmosDB",
+            "id": "e4b7a46c-9b2b-4bfb-9491-6b92e3a4fe6c",
+            "question": "必要なスループットを計算するにはどうすればよいですか?"
+        },
+        {
+            "answer": "新しい SDK を使用すると、ローカル エミュレーターで Table API (プレビュー) を使用できます。 新しいエミュレーターをダウンロードする場合は、「[Use the Azure Cosmos DB Emulator for local development and testing (ローカルの開発とテストでの Azure Cosmos DB Emulator の使用)](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/local-emulator.md)」をご覧ください。 app.config 内の StorageConnectionString 値が次のようになっている必要があります。\\n\\n`DefaultEndpointsProtocol=https;AccountName=localhost;AccountKey=C2y6yDjf5/R+ob0N8A7Cgv30VRDJIWEHLM+4QDU5DE2nQ9nDuVTqobD4b8mGGyPMbIZnqyMsEcaGQy67XIw/Jw==;TableEndpoint=https://localhost:8081`. `\\n",
+            "category": "CosmosDB",
+            "id": "dfbd8e02-240c-429e-9bb9-085522f5683f",
+            "question": "エミュレーターで新しい Table API (プレビュー) SDK をローカルで使用できますか?"
+        },
+        {
+            "answer": "新しい Table API (プレビュー) の表面領域は、.NET API での作成、削除、更新、クエリの各操作で既存の Azure Standard Table SDK と互換性があります。 Table API (プレビュー) ではパーティション キーと行キーの両方が必要となるため、行キーがあることを確認してください。 また、このサービスの GA に向けて、SDK のサポートをさらに追加する予定です。",
+            "category": "CosmosDB",
+            "id": "53fa175a-04a5-4235-896a-6926b3e195ca",
+            "question": "既存のアプリケーションを Table API (プレビュー) で動作させることはできますか?"
+        },
+        {
+            "answer": "いいえ。中断することなく、Standard Table 資産を作成したり、既存の資産を使用したりできます。 ただし、新しい Table API (プレビュー) を使用しない場合、自動インデックス、追加の整合性オプション、またはグローバル分散によるメリットは得られません。",
+            "category": "CosmosDB",
+            "id": "cd2a347c-6c19-43ad-a34e-41e10b89c148",
+            "question": "Table API (プレビュー) の機能を使用しない場合、Azure テーブル ベースの既存のアプリケーションを新しい SDK に移行する必要はありますか?"
+        },
+        {
+            "answer": "Azure Cosmos DB ポータルの[グローバル レプリケーション設定](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/tutorial-global-distribution-documentdb.md#portal)を使用して、アプリケーションに適したリージョンを追加できます。 グローバル分散型のアプリケーションを開発するには、低待機時間の読み取りを実現するために、PreferredLocation 情報をローカル リージョンに設定したアプリケーションを追加する必要があります。",
+            "category": "CosmosDB",
+            "id": "508298a7-6789-42e7-b45a-f10ead037d18",
+            "question": "Premium Table API (プレビュー) で、Azure の複数のリージョン間でのデータのレプリケーションを追加するにはどうすればよいですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB のグローバル レプリケーション ポータル ウィンドウを使用してリージョンを追加し、必要なリージョンにフェールオーバーできます。 手順については、[複数リージョンの Azure Cosmos DB アカウントを使用した開発](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/regional-failover.md)",
+            "category": "CosmosDB",
+            "id": "a26991f2-308e-4364-8d33-1646d329d127",
+            "question": "Premium Table API (プレビュー) でアカウントのプライマリ書き込みリージョンを変更するにはどうすればよいですか?"
+        },
+        {
+            "answer": "ローカルの場所から読み取りを実行できるようにするには、app.config ファイルの PreferredLocation キーを使用します。 既存のアプリケーションの場合、LocationMode が設定されていると、Table API (プレビュー) はエラーをスローします。 Premium Table API (プレビュー) は app.config ファイルからこの情報を取得するので、該当のコードを削除してください。 詳細については、「",
+            "category": "CosmosDB",
+            "id": "a4a84c58-7671-4aee-9ee6-680ed3357cb6",
+            "question": "データを分散するときに低待機時間を実現するために、優先読み取りリージョンを構成するにはどうすればよいですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB では、整合性、可用性、待機時間の最適なトレードオフを提供します。 Azure Cosmos DB には 5 つの整合性レベルが用意されているので、Table API (プレビュー) 開発者は、データを照会するときにテーブル レベルで最適な整合性モデルを選択し、個々の要求を行うことができます。 クライアントは、接続時に整合性レベルを指定できます。 app.config で TableConsistencyLevel キーの値を設定することで、レベルを変更できます。\\n\\nTable API (プレビュー) では、既定でセッションの整合性が適用され、\"自身の書き込みの読み取り\" によって低待機時間の読み取りを実現します。 詳細については、[整合性レベル](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/consistency-levels.md)に関する記事をご覧ください。\\n\\n既定では、Azure Standard Table はリージョン内では厳密な整合性を提供し、セカンダリの場所では最終的な整合性を提供します。\\n",
+            "category": "CosmosDB",
+            "id": "12e3109b-33fd-4637-8aee-65705733f51b",
+            "question": "Table API (プレビュー) の整合レベルについてどのように考えればよいですか?"
+        },
+        {
+            "answer": "はい。Azure Cosmos DB の分散特性のメリットを得る方法については、「[一貫性レベル](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/consistency-levels.md)」をご覧ください。 整合性レベルは保証の対象となるため、安心して使用できます。 詳細については、「[Azure Cosmos DB の機能](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/tutorial-develop-table-dotnet.md#azure-cosmos-db-capabilities)」をご覧ください。",
+            "category": "CosmosDB",
+            "id": "68d3aad2-0e02-4deb-88ac-1878d53798e4",
+            "question": "Azure Cosmos DB では、Standard Table よりも多くの整合性レベルが提供されるのですか?"
+        },
+        {
+            "answer": "データはローカル リージョンで永続的にコミットされ、ほんの数ミリ秒ですぐに他のリージョンにプッシュされます。 このレプリケーションは、データ センターのラウンドトリップ時間 (RTT) にのみ依存します。 Azure Cosmos DB のグローバル分散機能の詳細については、[Azure Cosmos DB: Azure のグローバル分散データベース サービス](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/distribute-data-globally.md)",
+            "category": "CosmosDB",
+            "id": "d632596d-7876-4588-ab03-a3e67706c601",
+            "question": "グローバル分散を有効にした場合、データのレプリケーションにどのくらいの時間がかかりますか?"
+        },
+        {
+            "answer": "Azure Cosmos DB では、コンテナー レベル (テーブル) で整合性レベルを設定できます。 レベルを変更するには、SDK を使用して、app.config ファイルで TableConsistencyLevel キーの値を指定します。 指定できる値は、Strong、Bounded Staleness、Session、Consistent Prefix、Eventual です。 詳細については、「[Azure Cosmos DB の調整可能なデータの一貫性レベル](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/consistency-levels.md)」をご覧ください。 基本的な考え方として、要求の整合性レベルは、テーブルの設定よりも高いレベルに設定することはできません。 たとえば、テーブルの整合性レベルを Eventual (最終的) に設定し、要求の整合性レベルを Strong (厳密) に設定することはできません。",
+            "category": "CosmosDB",
+            "id": "6d46fea0-d6c5-46b7-86a9-9521834d9f83",
+            "question": "読み取り要求の整合性レベルを変更することはできますか?"
+        },
+        {
+            "answer": "Premium Table API (プレビュー) では、Azure Cosmos DB のグローバル分散型プラットフォームを利用します。 アプリケーションがデータ センターのダウンタイムを許容できるようにするには、Azure Cosmos DB ポータルでアカウントのリージョンを少なくとももう 1 つ有効にします ([複数リージョンの Azure Cosmos DB アカウントを使用した開発](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/regional-failover.md)に関する記事を参照)。 ポータルを使用してリージョンの優先順位を設定できます ([複数リージョンの Azure Cosmos DB アカウントを使用した開発](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/regional-failover.md)に関する記事を参照)。\\n\\nアカウントのリージョンを必要な数だけ追加し、フェールオーバーの優先順位を指定してフェールオーバー先を制御できます。 データベースを使用するには、そのリージョンでもアプリケーションを提供する必要があります。 そうすれば、ダウンタイムが発生しなくなります。 クライアント SDK は自動回帰します。 つまり、ダウンしているリージョンを検出すると、新しいリージョンに自動的にフェールオーバーできます。\\n",
+            "category": "CosmosDB",
+            "id": "7429d9ec-b338-4495-acd5-bc95d0866846",
+            "question": "リージョンがダウンした場合、Premium Table API (プレビュー) アカウントではフェールオーバーにどのように対処するのでしょうか?"
+        },
+        {
+            "answer": "はい。Premium Table API (プレビュー) では、バックアップに Azure Cosmos DB のプラットフォームを利用します。 バックアップは自動的に作成されます。 詳細については、[Azure Cosmos DB でのオンライン バックアップと復元](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/online-backup-and-restore.md)",
+            "category": "CosmosDB",
+            "id": "169cefc9-3a62-4b97-ad72-b48cccae3311",
+            "question": "Premium Table API (プレビュー) ではバックアップは有効になっていますか?"
+        },
+        {
+            "answer": "はい。エンティティのすべての属性のインデックスが既定で作成されます。 詳細については、[Azure Cosmos DB インデックス作成ポリシー](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/indexing-policies.md)",
+            "category": "CosmosDB",
+            "id": "cbde4cfd-2c69-407d-8027-1c7d9b9f798d",
+            "question": "Table API (プレビュー) では、既定でエンティティのすべての属性のインデックスが作成されるのですか?"
+        },
+        {
+            "answer": "はい。Azure Cosmos DB はすべての属性の自動インデックス作成機能を備えています。スキーマ定義は不要です。 この自動化により、開発者はインデックスの作成と管理ではなく、アプリケーションに注力できるようになります。 詳細については、[Azure Cosmos DB インデックス作成ポリシー](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/indexing-policies.md)",
+            "category": "CosmosDB",
+            "id": "eb40213a-5777-488a-ad3d-6a59582efb65",
+            "question": "つまり、クエリを満たすために複数のインデックスを作成する必要はないということですか?"
+        },
+        {
+            "answer": "はい。インデックス定義を提供することでインデックス作成ポリシーを変更できます。 詳細については、「[Azure Cosmos DB の機能](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/tutorial-develop-table-dotnet.md#azure-cosmos-db-capabilities)」をご覧ください。 設定を適切にエンコードし、エスケープする必要があります。\\n\\napp.config ファイルに JSON 形式の文字列で指定します。\\n\\n`{ \"indexingMode\": \"consistent\", \"automatic\": true, \"includedPaths\": [ { \"path\": \"/somepath\", \"indexes\": [ { \"kind\": \"Range\", \"dataType\": \"Number\", \"precision\": -1 }, { \"kind\": \"Range\", \"dataType\": \"String\", \"precision\": -1 } ] } ], \"excludedPaths\": [ { \"path\": \"/anotherpath\" } ] } `\\n",
+            "category": "CosmosDB",
+            "id": "d64fce52-1408-4e2f-89ae-452b0db2bc96",
+            "question": "インデックス作成ポリシーは変更できますか?"
+        },
+        {
+            "answer": "プレビューでは、Table API は Azure Table Storage と同じクエリ機能を提供します。 また、並べ替え、集計、地理空間クエリ、階層、さまざまな組み込み関数もサポートしています。 将来のサービス更新プログラムで Table API の追加機能が提供される予定です。 詳細については、「[Azure Cosmos DB DocumentDB API の SQL クエリ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/documentdb/documentdb-sql-query.md)",
+            "category": "CosmosDB",
+            "id": "c79e1572-3a2b-4710-870e-dd9cfaaec982",
+            "question": "プラットフォームとしての Azure Cosmos DB は、並べ替え、集計、階層などの多数の機能を備えているようですが、 これらの機能は Table API に追加される予定ですか?"
+        },
+        {
+            "answer": "\\n\\n次のいずれかの条件に該当する場合は、TableThroughput を変更してください。\\n\\n*   データの抽出、変換、読み込み (ETL) を実行している。または、短時間に大量のデータをアップロードする必要がある。\\n*   バックエンドでコンテナーのスループットを増やす必要がある (たとえば、使用されたスループットがプロビジョニング スループットを超えており、調整が行われている)。 詳細については、「[Azure Cosmos DB コンテナーのスループットの設定](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/set-throughput.md)」を参照してください。",
+            "category": "CosmosDB",
+            "id": "26fac794-6096-40a8-999b-25cf52756559",
+            "question": "Table API (プレビュー) の TableThroughput は、どのようなときに変更する必要がありますか?"
+        },
+        {
+            "answer": "はい。スループットのスケーリングは、Azure Cosmos DB ポータルのスケール ウィンドウを使用して実行できます。 詳細については、[スループットの設定](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/set-throughput.md)",
+            "category": "CosmosDB",
+            "id": "b6ddb3a6-bcc9-4fcb-b84a-6af267feab5c",
+            "question": "Table API (プレビュー) のテーブルのスループットはスケールアップまたはスケールダウンできますか?"
+        },
+        {
+            "answer": "はい。app.config で TableThroughput を上書きしておらず、Azure Cosmos DB であらかじめ作成されているコンテナーを使用していない場合、スループットが 400 に設定されたテーブルが作成されます。",
+            "category": "CosmosDB",
+            "id": "06a4da41-635c-413b-aff0-a0c9ae5de47e",
+            "question": "新しくプロビジョニングされたテーブルには、既定の TableThroughput が設定されるのですか?"
+        },
+        {
+            "answer": "なし。 Standard Table API の既存のお客様を対象とする価格の変更はありません。",
+            "category": "CosmosDB",
+            "id": "8dba105d-103e-4b78-b795-930832ecaf62",
+            "question": "Standard Table API の既存の顧客を対象とする価格の変更はありますか?"
+        },
+        {
+            "answer": "料金は、割り当てられた TableThroughput によって異なります。",
+            "category": "CosmosDB",
+            "id": "0a9fe7bd-8514-4d6b-a7e7-38e1483b2a37",
+            "question": "Table API (プレビュー) の料金はどのように計算されますか?"
+        },
+        {
+            "answer": "要求レートが基になるコンテナーのプロビジョニング スループットの容量を超えると、エラーが発生し、SDK は再試行ポリシーを適用して呼び出しを再試行します。",
+            "category": "CosmosDB",
+            "id": "0e9ac6c5-78b6-4240-857e-485247be3386",
+            "question": "Table API (プレビュー) では、テーブルの調整にどのように対処すればよいですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB では、app.config ファイルにコンテナーのスループットが指定されていない場合、既定のスループットが設定されます。\\n\\nAzure Cosmos DB では、操作に上限を設定してパフォーマンスと待機時間を保証します。 この保証は、エンジンがテナントの操作にガバナンスを適用できる場合に可能になります。 TableThroughput を設定すると、プラットフォームでこの容量が予約され、操作が正常に完了することが保証されるので、保証されたスループットと待機時間が確保されます。\\n\\nまた、スループットの仕様により、スループットを弾力的に変更して、アプリケーションの季節性によるメリットを享受し、スループットのニーズを満たして、コストを削減できます。",
+            "category": "CosmosDB",
+            "id": "36c99008-5129-4e1d-ba9e-ee0c454abe90",
+            "question": "Azure Cosmos DB の Premium Table API (プレビュー) を利用する際に、PartitionKey と RowKey 以外にスループットを選択する必要があるのはなぜですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は、可用性、待機時間、スループットが保証された、グローバル分散型の SLA ベースのシステムとして設計されています。 他のシステムのスループットとは異なり、Azure Cosmos DB でスループットを予約すると、そのスループットが保証されます。 Azure Cosmos DB には、セカンダリ インデックスやグローバル分散など、お客様から要望があった追加機能が用意されています。 プレビュー期間中はスループットに最適化されたモデルを提供していますが、最終的には、お客様のニーズを満たすためにストレージに最適化されたモデルを提供する予定です。",
+            "category": "CosmosDB",
+            "id": "7c439813-5426-4884-a43a-d808918a1039",
+            "question": "データの保存にしか料金を支払っておらず、クエリを実行することはほとんどないため、Azure Storage SDK は非常に安価でした。 新しい Azure Cosmos DB では、トランザクションを 1 つも実行していない場合や何も保存していない場合でも課金されているようです。 説明していただけますか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は、待機時間、スループット、可用性、整合性を保証し、無制限のスケールを提供する SLA ベースのシステムです。 保証された Premium パフォーマンスを確保するために、データ サイズとインデックスが管理可能であり、スケーラブルであることを確認してください。 パーティション キーごとのエンティティ数または項目数に 10 GB の制限を設けているのは、検索やクエリの優れたパフォーマンスを確実に提供するためです。 すべての情報を 1 つのパーティションに格納し、そのパーティションに対してクエリを実行すると、ホット パーティションになります。Azure Storage でもアプリケーションが適切にスケールできるように、ホット パーティションが発生しないようにすることをお勧めします。",
+            "category": "CosmosDB",
+            "id": "ff85e118-deb4-4a8b-9422-c1d4afdb017f",
+            "question": "Table Storage にデータを取り込んだときに、(パーティションが満杯であることを示す) \"クォータが上限に達した\" ことを通知するメッセージが表示されたことは一度もありませんでした。 Table API (プレビュー) では、このメッセージが表示されました。 このサービスには制限があり、既存のアプリケーションを変更しなければならないのでしょうか?"
+        },
+        {
+            "answer": "はい。 Table API (プレビュー) の表面領域は Table Storage SDK の表面領域とほぼ同じであるため、パーティション キーによってデータを効率的に分散させることができます。 行キーはそのパーティション内で一意です。 行キーが存在する必要があり、Standard SDK の場合と同様に、行キーを null にすることはできません。 RowKey の長さは 255 バイト、PartitionKey の長さは 100 バイトです (間もなく 1 KB に増えます)。",
+            "category": "CosmosDB",
+            "id": "4a62a886-d93d-4814-b5bb-560c6132ec34",
+            "question": "新しい Table API (プレビュー) で PartitionKey と RowKey が必要なのはそのためですか?"
+        },
+        {
+            "answer": "このプレビューは Standard Table と互換性があるため、ほとんどのエラーが Standard Table のエラーにマップされます。",
+            "category": "CosmosDB",
+            "id": "7af69ce7-8a20-4272-a9de-c7a9024bee1a",
+            "question": "Table API (プレビュー) のエラー メッセージはどのようなものですか?"
+        },
+        {
+            "answer": "Azure Cosmos DB は、待機時間、スループット、可用性、整合性を保証する SLA ベースのシステムです。 Azure Cosmos DB はプロビジョニングされるシステムであるため、これらの要件を保証するためにリソースが予約されています。 テーブルを次々に作成すると、その作成ペースが検出され、調整が行われます。 テーブルの作成ペースを確認し、1 分あたり 5 つ未満に抑えることをお勧めします。 Table API (プレビュー) はプロビジョニングされるシステムであることに注意してください。 プロビジョニングした時点から料金が発生します。",
+            "category": "CosmosDB",
+            "id": "a2382847-6190-41df-b349-225dbf96a3d3",
+            "question": "Table API (プレビュー) で多数のテーブルを次々に作成しようとすると調整が行われるのはなぜですか?"
+        },
+        {
+            "answer": "拡張ライブラリを使用して、Graph API (プレビュー) の機能を適用できます。 このライブラリは Microsoft Azure Graphs と呼ばれ、NuGet で提供されます。",
+            "category": "CosmosDB",
+            "id": "5dbfc00f-0097-46ee-8a2f-d15202686b88",
+            "question": "Graph API (プレビュー) の機能を Azure Cosmos DB に適用するにはどうすればよいですか?"
+        },
+        {
+            "answer": "はい。将来、クエリの他のメカニズムを追加する予定です。",
+            "category": "CosmosDB",
+            "id": "fae7c098-5299-41fc-9ad9-40049984b01d",
+            "question": "グラフ トラバーサル言語の Gremlin がサポートされているようですが、 クエリの他の形式を追加する予定はありますか?"
+        },
+        {
+            "answer": "\\n\\nまず、[Graph API](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/cosmos-db/create-graph-dotnet.md) のクイック スタートを完了してください。\\n\\n## DocumentDB のお客様からの質問\\n\\n",
+            "category": "CosmosDB",
+            "id": "9622bc5e-74ee-48e4-8e4a-14421ec36c20",
+            "question": "新しい Graph API (プレビュー) を使用するにはどうすればよいですか?"
+        },
+        {
+            "answer": "お客様は何も変更する必要はありません。 ご利用の DocumentDB リソースは既に Azure Cosmos DB リソースになっています。また、この移行時にサービスの中断は発生していません。",
+            "category": "CosmosDB",
+            "id": "f9d67a53-55d9-48c6-aafe-a969db99b5c2",
+            "question": "DocumentDB リソースを Azure Cosmos DB で引き続き実行できるようにするには何をすればよいですか?"
+        },
+        {
+            "answer": "何も変更を加える必要はありません。 クラスや名前空間、NuGet パッケージの名前は変わっていません。 日頃から Microsoft が推奨しているように、最新の機能と改良点を最大限に活かすために SDK は最新の状態に保ってください。",
+            "category": "CosmosDB",
+            "id": "335ccc4f-5195-4fb6-9558-b9728a03fb05",
+            "question": "Azure Cosmos DB と連動させるために、既存のアプリにはどのような変更を加えればよいですか?"
+        },
+        {
+            "answer": "DocumentDB は、Azure サービスとしてポータルに表示されなくなります。 次の図に示すように、代わりに新しい Azure Cosmos DB アイコンが表示されます。 既存のコレクションはすべてこれまでと同様に利用できます。また、スループットのスケーリング、整合性レベルの変更、SLA の監視も引き続き行うことができます。 データ エクスプローラー (プレビュー) の機能が強化されています。 次の図に示すように、ドキュメントの表示と編集、クエリの作成と実行、ストアド プロシージャ、トリガー、UDF の操作を 1 つのページから実行できるようになりました。",
+            "category": "CosmosDB",
+            "id": "518b6cd8-17b6-4c3e-a060-3625eb1018d6",
+            "question": "Azure Portal に変更はありますか?"
+        },
+        {
+            "answer": "いいえ。Azure Cosmos DB でアプリを実行するコストは以前と同じです。",
+            "category": "CosmosDB",
+            "id": "839d73fc-1b2a-4e4f-ad3b-cdc8b3b38a51",
+            "question": "料金に変更はありますか?"
+        },
+        {
+            "answer": "いいえ。可用性、一貫性、待ち時間、スループットに関する SLA は未変更のままポータルに表示されています。 詳細については、「[Azure Cosmos DB の SLA](https://azure.microsoft.com/support/legal/sla/cosmos-db/)",
+            "category": "CosmosDB",
+            "id": "5f90b874-f05a-40f9-bd1c-cbba4ca07ba9",
+            "question": "SLA に変更はありますか?"
+        },
+        {
+            "answer": "Azure クラシック ポータルにアクセスするために、各ユーザーは Azure サブスクリプションを使用したアクセス許可が必要です。 有料の Office 365 または Azure AD サブスクリプションをお持ちの場合は、1 回限りのアクティブ化の手順を行うために [http://aka.ms/accessAAD](http://aka.ms/accessAAD) にアクセスしてください。 これらをお持ちでない場合は、無料の [Azure アカウント](https://azure.microsoft.com/pricing/free-trial/)または有料のサブスクリプションをアクティブ化する必要があります。\\n\\n詳細については、次を参照してください。\\n\\n*   [Azure サブスクリプションを Azure Active Directory に関連付ける方法](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-how-subscriptions-associated-directory.md)\\n*   [Azure での Office 365 サブスクリプションのディレクトリの管理](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-manage-o365-subscription.md)",
+            "category": "AzureAD",
+            "id": "1265bef8-1ca5-4b82-afd9-a5858e3187b6",
+            "question": "Azure クラシック ポータルで Azure AD にアクセスしようとすると、\"サブスクリプションが見つかりません\" と表示されるのはなぜですか?"
+        },
+        {
+            "answer": "Azure AD を使用すると、すべての Web サービスに共通の ID とアクセス機能が提供されます。 Office 365、Microsoft Azure、Intune などのサービスをご利用の場合は、Azure AD を既に使用しているため、これらのサービスすべてでサインオンとアクセス管理が有効になります。\\n\\nWeb サービスを使用するように設定されていないユーザーはすべて、1 つ以上の Azure AD インスタンス内のユーザー アカウントとして定義されます。 これらのアカウントは、クラウド アプリケーション アクセスなど、無料の Azure AD 機能に対して設定できます。\\n\\nAzure AD 有料サービス (Enterprise Mobility + Security など) は、エンタープライズ規模の包括的な管理ソリューションとセキュリティ ソリューションによって、Office 365 や Microsoft Azure などの他の Web サービスを補完します。\\n",
+            "category": "AzureAD",
+            "id": "3290cbb7-2f62-4948-b984-1bced9a6cb5f",
+            "question": "Azure AD、Office 365、Azure の関係はどうなっていますか?"
+        },
+        {
+            "answer": "Azure Portal には有効なサブスクリプションが必要ありませんが、クラシック ポータルには必要です。 サブスクリプションを持っていない場合、クラシック ポータルにサインインすることはできません。",
+            "category": "AzureAD",
+            "id": "e929b647-8dda-4e7c-85b8-9e386adaee19",
+            "question": "Azure Portal にサインインできるのに、Azure クラシック ポータルにサインインできないのはなぜですか?"
+        },
+        {
+            "answer": "既定では、Azure にサインアップすると、サブスクリプション管理者ロールが割り当てられます。 サブスクリプション管理者は、Microsoft アカウントと、Azure サブスクリプションが関連付けられているディレクトリの職場または学校アカウントのどちらも使用できます。 このロールには、Azure Portal でのサービスの管理が許可されます。\\他のユーザーが同じサブスクリプションを使用してサインインし、サービスにアクセスする必要がある場合は、共同管理者として追加できます。 このロールには、サービス管理者と同じアクセス特権がありますが、サブスクリプションと Azure ディレクトリの関連付けを変更することはできません。 サブスクリプション管理者の詳細については、「[How to add or change Azure administrator roles (Azure 管理者ロールを追加または変更する方法)](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/billing-add-change-azure-subscription-administrator.md)」と「[Azure サブスクリプションを Azure Active Directory に関連付ける方法](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-how-subscriptions-associated-directory.md)」を参照してください。Azure AD には、ディレクトリと ID に関連した機能を管理するために別の管理ロールのセットがあります。 これらの管理者は、Azure Portal または Azure クラシック ポータルのさまざまな機能にアクセスできるようになります。 管理者のロールによって、ユーザーの作成または編集、他のユーザーへの管理者ロールの割り当て、ユーザー パスワードのリセット、ユーザー ライセンスの管理、ドメインの管理など、管理者が実行できる操作が決まります。 Azure AD ディレクトリ管理者とそのロールの詳細については、「[Azure Active Directory での管理者ロールの割り当て](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-assign-admin-roles.md)」を参照してください。\\n\\nさらに、Azure AD 有料サービス (Enterprise Mobility + Security など) は、エンタープライズ規模の包括的な管理ソリューションとセキュリティ ソリューションによって、Office 365 や Microsoft Azure などの他の Web サービスを補完します",
+            "category": "AzureAD",
+            "id": "30bfd400-2346-49b6-a606-f7ab2d42b1b0",
+            "question": "サブスクリプション管理者とディレクトリ管理者の違いは何ですか?"
+        },
+        {
+            "answer": "\\n\\n いいえ。 これは、現在使用できません。\\n\\n## ハイブリッド Azure AD の使用\\n\\n",
+            "category": "AzureAD",
+            "id": "258f7b7a-8a88-4815-9660-f2c4951a9516",
+            "question": "Azure AD ユーザー ライセンスの有効期限がいつ切れるかを示すレポートはありますか?"
+        },
+        {
+            "answer": "コラボレーターとして別の組織のテナントに追加されるときに、右上にある \"テナント スイッチャー\" を使用してテナントを切り替えることができます。 現時点では、招待元の組織から切り替える方法はありません。Microsoft では、この機能の提供に向けて取り組んでいます。 この機能が利用可能になるまでは、招待元の組織に、その組織のテナントから自分を削除するよう依頼できます。",
+            "category": "AzureAD",
+            "id": "9ba8b4f7-1407-4f91-afd9-9f6e1e4f7c98",
+            "question": "コラボレーターとして追加されたときにテナントから切り替えるにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n Azure AD Connect を使用すると、オンプレミスのディレクトリを Azure AD に接続できます。\\n\\n詳細については、「[オンプレミス ID と Azure Active Directory の統合](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-aadconnect.md)\\n",
+            "category": "AzureAD",
+            "id": "19bdb65b-8054-40b4-83fd-206284a04d7e",
+            "question": "オンプレミスのディレクトリを Azure AD に接続するにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n オンプレミスのディレクトリと Azure AD の間でシングル サインオン (SSO) を設定するだけです。 Azure AD を介してクラウド アプリケーションにアクセスしている限り、自動的にこのサービスによって、オンプレミスの資格情報を使ったユーザー認証が正しく行われます。\\n\\nオンプレミスからの SSO は、Active Directory フェデレーション サービス (ADFS) などのフェデレーション ソリューションを使用するか、パスワード ハッシュ同期を構成すると、簡単に実装できます。 どちらのオプションも Azure AD Connect 構成ウィザードを使って簡単にデプロイできます。\\n\\n詳細については、「[オンプレミス ID と Azure Active Directory の統合](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-aadconnect.md)\\n",
+            "category": "AzureAD",
+            "id": "ef134de3-0968-4772-a910-fb41e415b336",
+            "question": "オンプレミスのディレクトリとクラウド アプリケーションの間で SSO を設定するにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n はい。Azure AD には、ユーザーによるアプリケーションのセルフ サービス アクセス用に [Azure AD アクセス パネル](http://myapps.microsoft.com/)が用意されています。 Office 365 を利用している方は、これと同じ機能の多くを Office 365 ポータルで使用できます。\\n\\n詳細については、「[アクセス パネルの概要](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-saas-access-panel-introduction.md)\\n",
+            "category": "AzureAD",
+            "id": "d997f758-ff90-406a-bce7-b2240f2044a6",
+            "question": "Azure AD には、所属する組織のユーザーのためのセルフサービス ポータルが用意されていますか?"
+        },
+        {
+            "answer": "はい。 Azure AD Premium Edition には Azure AD Connect Health が用意されています。 Azure AD Connect Health では、オンプレミスの ID インフラストラクチャと同期サービスを監視、分析できます。\\n\\n詳細については、「[クラウド内のオンプレミスの ID インフラストラクチャと同期サービスの監視](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-aadconnect-health.md)」を参照してください。\\n\\n## パスワード管理\\n\\n",
+            "category": "AzureAD",
+            "id": "ba377142-fa5f-4b76-9bee-6a8e01007131",
+            "question": "Azure AD はオンプレミスのインフラストラクチャの管理に役立ちますか?"
+        },
+        {
+            "answer": "ライトバックを有効にするために、Active Directory パスワードを Azure AD に同期する必要はありません。 フェデレーション環境では、Azure AD シングル サインオン (SSO) は、ユーザーの認証のためにオンプレミスのディレクトリを利用します。 このシナリオでは、オンプレミスのパスワードを Azure AD で追跡する必要はありません。",
+            "category": "AzureAD",
+            "id": "6428e735-b423-44dd-89ab-e4ca95de76e6",
+            "question": "パスワード同期を使わずに Azure AD パスワード ライトバックを使用することはできますか (このシナリオでは、クラウドにパスワードを保存せずに、パスワード ライトバックで Azure AD のセルフサービスによるパスワードのリセット (SSPR) を使用できますか?)"
+        },
+        {
+            "answer": "パスワード ライトバックはリアルタイムで行われます。\\n\\n詳細については、「[パスワード管理の概要](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-passwords-getting-started.md)\\n",
+            "category": "AzureAD",
+            "id": "385ae5ae-2049-4764-9623-21a67b5f80f8",
+            "question": "オンプレミスの Active Directory へのパスワード ライトバックにはどれくらいの時間がかかりますか?"
+        },
+        {
+            "answer": "はい。パスワード ライトバックが有効な状態であれば、管理者によって実行されるパスワード操作は、オンプレミスの環境に書き戻されます。\\n\\nパスワード関連の質問に対する回答については、「[パスワード管理に関するよく寄せられる質問 (FAQ)](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-passwords-faq.md)\\n",
+            "category": "AzureAD",
+            "id": "b562dd22-2b5b-45e0-93cc-5aab4cbf329f",
+            "question": "管理者によって管理されるパスワードでパスワード ライトバックを使用できますか?"
+        },
+        {
+            "answer": "このような状況では、いくつかの選択肢があります。 セルフサービスによるパスワードのリセット (SSPR) が使用可能な場合は、それを使用してください。 SSPR が動作するかどうかは、その構成方法によって決まります。 詳細については、「[パスワード リセット ポータルのしくみ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-passwords-best-practices.md)」を参照してください。Office 365 ユーザーの場合は、「[ユーザー パスワードの再設定](https://support.office.com/en-us/article/Admins-Reset-user-passwords-7A5D073B-7FAE-4AA5-8F96-9ECD041ABA9C?ui=en-US&amp;rs=en-US&amp;ad=US)」で説明されている手順を使用して、パスワードをリセットできます。\\n\\nAzure AD アカウントの場合、管理者は、次のいずれかの方法を使用してパスワードをリセットできます。\\n\\n*   [Azure Portal でアカウントをリセットする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-users-reset-password-azure-portal.md)\\n\\n*   [クラシック ポータルでアカウントをリセットする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-create-users-reset-password.md)\\n\\n*   [PowerShell の使用](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/powershell/module/msonline/set-msoluserpassword?view=azureadps-1.0)",
+            "category": "AzureAD",
+            "id": "a156cbd0-79e2-4ece-8500-be7e514ad7e7",
+            "question": "パスワードを変更しようとしているときに既存の Office 365/Azure AD パスワードを忘れた場合は、どうすればよいですか?"
+        },
+        {
+            "answer": "アカウントは、より高度な戦略によってロックされます。 これは、使用の IP と入力したパスワードに基づいています。 また、ロックアウト期間は、攻撃されている可能性に応じて長くなります。",
+            "category": "AzureAD",
+            "id": "f37ea784-dd14-464e-a291-b3dd337c61f1",
+            "question": "Q: 何回か試行が失敗した後、アカウントはロックされますか。または、より高度な戦略はありますか。"
+        },
+        {
+            "answer": "これは、パスワードが、\"Password\"、\"123456\" など、一般的によく使用されるものであることを意味します。",
+            "category": "AzureAD",
+            "id": "6ef16117-b9e6-4641-91ef-60d038ca3cdf",
+            "question": " (一般的な) あるパスワードが拒否され、\"このパスワードは何回も使用されています\" という内容のメッセージが表示されました。これは、パスワードが現在 Active Directory で使用されていることを意味しますか。"
+        },
+        {
+            "answer": "要求をフィルター処理するゲートウェイによって、ボットネットからの保護を提供します。また、これは B2C テナントすべてに適用されます。",
+            "category": "AzureAD",
+            "id": "d7ec8a33-f5b9-4bed-893b-0fdfcc494660",
+            "question": "不審なソース (ボットネット、tor エンドポイント) からのサインイン要求は B2C テナントでブロックされますか。また、これには Basic または Premium Edition のテナントが必要ですか。"
+        },
+        {
+            "answer": "Azure AD には、Microsoft、アプリケーション サービス プロバイダー、パートナーが提供する、2,600 個を超える事前統合されたアプリケーションがあります。 事前統合されたアプリケーションすべてで、シングル サインオン (SSO) がサポートされています。 SSO を使用すると、アプリへのアクセスに、所属する組織の資格情報を使うことができます。 また、一部のアプリケーションでは、プロビジョニングとプロビジョニング解除の自動化がサポートされています。事前統合されたアプリケーションの完全な一覧については、「 [Active Directory Marketplace](https://azure.microsoft.com/marketplace/active-directory/)",
+            "category": "AzureAD",
+            "id": "57f51493-ac94-49f0-a63d-e1c514ce1c59",
+            "question": "Azure AD とその機能にあらかじめ統合されているアプリケーションの一覧はどこにありますか?"
+        },
+        {
+            "answer": "Azure AD Premium をご利用の場合は、お求めのアプリケーションを追加して構成できます。 アプリケーションの機能と必要性に応じて SSO と自動プロビジョニングを構成できます。詳細については、次を参照してください。\\n\\n*   [Azure Active Directory アプリケーション ギャラリーに含まれていないアプリケーションへのシングル サインオンの構成](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-saas-custom-apps.md)\\n\\n*   [SCIM を使用して、Azure Active Directory からアプリケーションへのユーザーとグループの自動プロビジョニングを有効にする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-scim-provisioning.md)",
+            "category": "AzureAD",
+            "id": "dc598791-9364-48ad-9b8a-ccfca4176bdb",
+            "question": "必要なアプリケーションが Azure AD Marketplace にない場合はどうすればよいですか?"
+        },
+        {
+            "answer": "Azure AD では、ユーザーがアプリケーションを表示してアクセスする方法が複数あります。たとえば、次の方法があります。\\n\\n*   Azure AD アクセス パネル\\n\\n*   Office 365 アプリケーション起動プログラム\\n*   フェデレーション アプリへの直接サインイン\\n\\n*   フェデレーション アプリ、パスワードベースのアプリ、または既存のアプリへのディープ リンク\\n\\n詳細については、「 [Azure AD 統合アプリケーションをユーザーにデプロイする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-appssoaccess-whatis.md#deploying-azure-ad-integrated-applications-to-users)\\n",
+            "category": "AzureAD",
+            "id": "0c51da4b-75ba-40c6-a040-24bd6b9316a5",
+            "question": "ユーザーが Azure AD を使用してアプリケーションにサインインする場合、どのような方法がありますか?"
+        },
+        {
+            "answer": "Azure AD では、SAML 2.0、OpenID Connect、OAuth 2.0、WS-Federation など、認証と承認に関する標準化されたプロトコルが多数サポートされています。 Azure AD では、フォーム ベース認証しかサポートしていないアプリのために、パスワード保管と自動サインインの機能もサポートされています。詳細については、次を参照してください。\\n\\n*   [Azure AD の認証シナリオ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-authentication-scenarios.md)\\n\\n*   [Active Directory の認証プロトコル](https://msdn.microsoft.com/library/azure/dn151124.aspx)\\n*   [Azure Active Directory によるシングル サインオンのしくみ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-appssoaccess-whatis.md#how-does-single-sign-on-with-azure-active-directory-work)  \\n",
+            "category": "AzureAD",
+            "id": "eb24a22c-3c0f-4a95-996e-4959ffe28277",
+            "question": "Azure AD でアプリケーションに対する認証とシングル サインオンを有効にする方法には、どのようなものがありますか?"
+        },
+        {
+            "answer": "Azure AD アプリケーション プロキシを使用すれば、選択したオンプレミスの Web アプリケーションに簡単かつ安全にアクセスできます。 これらのアプリケーションには、Azure AD でサービスとしてのソフトウェア (SaaS) アプリにアクセスするのと同じ方法でアクセスできます。 VPN を使ったり、ネットワーク インフラストラクチャを変更したりする必要はありません。詳細については、「[オンプレミス アプリケーションへの安全なリモート アクセスを実現する方法](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-application-proxy-get-started.md)",
+            "category": "AzureAD",
+            "id": "f782c1e4-aae1-48fb-ba0e-aee0e40dbaeb",
+            "question": "オンプレミスで実行しているアプリケーションを追加することはできますか?"
+        },
+        {
+            "answer": "Azure AD 条件付きアクセスを使用して、各アプリケーションに一意のアクセス ポリシーを割り当てることができます。 ポリシーでは、多要素認証を常に要求することも、ユーザーがローカル ネットワークに接続されていない場合に要求することもできます。\\n\\n詳細については、[Azure Active Directory に接続されている Office 365 やその他のアプリへのアクセスのセキュリティ保護](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-conditional-access.md)に関する記事を参照してください。",
+            "category": "AzureAD",
+            "id": "5891038c-88da-432d-b925-3ee39beeb5c8",
+            "question": "特定のアプリケーションにアクセスするユーザーに多要素認証を要求するにはどうすればよいですか?"
+        },
+        {
+            "answer": "Azure AD を使用すると、多くの一般的なクラウド SaaS アプリでユーザー ID の作成、保守、削除を自動化できます。詳細については、「[Azure Active Directory による SaaS アプリへのユーザー プロビジョニングとプロビジョニング解除の自動化](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/active-directory/active-directory-saas-app-provisioning.md)",
+            "category": "AzureAD",
+            "id": "aae95aee-096e-49f7-9c69-a00737f71ba5",
+            "question": "SaaS アプリの自動化されたユーザー プロビジョニングについて教えてください。"
+        },
+        {
+            "answer": "いいえ。 Azure AD では、LDAP プロトコルがサポートされていません。",
+            "category": "AzureAD",
+            "id": "b2db80bd-4eae-4382-ab16-7d36518300ad",
+            "question": "Azure AD で Secure LDAP 接続をセットアップできますか?"
+        },
+        {
+            "answer": "クラシック デプロイメント モデルを使用して作成された Web サービスと新しい Azure Resource Manager デプロイメント モデルを使用して作成された Web サービスは、[Microsoft Azure Machine Learning Web サービス](https://services.azureml.net/) ポータルに一覧表示されます。\\n  \\n\\n\\nクラシック Web サービスは、[Machine Learning Studio](http://studio.azureml.net) の **[Web サービス]** タブにも一覧表示されます。",
+            "category": "MachineLearning",
+            "id": "d45dd4ff-28e5-4e80-8f46-f900383f1f7e",
+            "question": "クラシック Web サービスの一覧はどこで確認できますか?新しい Azure Resource Manager ベースの Web サービスの一覧はどこで確認できますか?"
+        },
+        {
+            "answer": "Machine Learning Web サービスは、アプリケーションと Machine Learning ワークフローのスコア付けモデルの間のインターフェイスを提供します。 外部のアプリケーションは Azure Machine Learning を使用して Machine Learning ワークフローのスコア付けモデルとリアルタイムで通信できます。 Machine Learning Web サービスを呼び出すと、予測結果が外部のアプリケーションに返されます。 Web サービスの呼び出しを実行するには、Web サービスのデプロイ時に作成された API キーを渡します。 Machine Learning Web サービスは、Web プログラミング プロジェクトで広く使われているアーキテクチャの REST に基づいています。\\n  \\n\\n\\nAzure Machine Learning には、2 種類の Web サービスがあります。\\n  \\n\\n\\n* 要求応答サービス (RRS) - 待ち時間が短くスケーラブルなサービス。Machine Learning Studio を使用して作成およびデプロイされたステートレスなモデルへのインターフェイスを提供します。\\n\\n* バッチ実行サービス (BES) - データ レコードのバッチをスコア付けする非同期のサービス。\\n  \\n\\n\\nREST API を使用して Web サービスにアクセスするには、いくつかの方法があります。 たとえば、Web サービスをデプロイしたときに生成されたサンプル コードを使用して、C#、R、または Python でアプリケーションを記述できます。\\n  \\n\\n\\nサンプル コードは以下のページで入手できます。\\n\\n- Azure Machine Learning Web サービス ポータルの Web サービスの使用に関するページ\\n\\n- Machine Learning Studio の Web サービス ダッシュボードの API ヘルプ ページ\\n  \\n\\n\\n作成済みのサンプル Microsoft Excel ブックを使用することもできます。これも Machine Learning Studio の Web サービス ダッシュボードで入手できます。",
+            "category": "MachineLearning",
+            "id": "fa1150b8-7591-428f-95ae-72658bb01330",
+            "question": "Azure Machine Learning Web サービスとは何ですか?"
+        },
+        {
+            "answer": "[ユーザー フィードバック フォーラム](http://go.microsoft.com/fwlink/?LinkId=404231)にアクセスして、機能に関する追跡中の要望をご覧いただけます。 探している機能が既に要求されている場合は、その要求に投票を追加できます。 探している機能が存在しない場合は、新しい要求を作成してください。 作成した要求の状態もフォーラムで確認できます。 この一覧はこまめに追跡され、機能の提供状況は頻繁に更新されます。 また、R と Python に対する組み込みのサポートを使用すれば、必要に応じてカスタム変換を作成できます。",
+            "category": "MachineLearning",
+            "id": "51a8922e-f12a-4126-a8d6-fb957077a290",
+            "question": "探しているアルゴリズム、データ ソース、データ形式、データ変換操作が Azure Machine Learning Studio にありません。どうすればいいでしょうか?"
+        },
+        {
+            "answer": "はい。Machine Learning Studio に既存の R コードまたは Python コードを取り込み、それを Azure Machine Learning の学習ツールと同じ実験で実行し、Azure Machine Learning 経由で Web サービスとしてソリューションをデプロイすることができます。 詳細については、「[R を使用した実験の拡張](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-extend-your-experiment-with-r.md)」と「[Azure Machine Learning Studio での Python Machine Learning スクリプトの実行](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-execute-python-scripts.md)」を参照してください",
+            "category": "MachineLearning",
+            "id": "007d9432-b735-498d-8d43-f17909458dde",
+            "question": "既存のコードを Machine Learning Studio に取り込むことはできますか?"
+        },
+        {
+            "answer": "いいえ、PMML (Predictive Model Markup Language) はサポートされていません。 ただし、カスタムの R と Python コードを使用してモジュールを定義できます。http://en.wikipedia.org/wiki/Predictive_Model_Markup_Language",
+            "category": "MachineLearning",
+            "id": "af9cb164-7bc6-4f0f-bfa9-a9389a9cc8fb",
+            "question": "PMML などを使用してモデルを定義することはできますか。 "
+        },
+        {
+            "answer": "実験では最大 4 つのモジュールを並列実行できます。  \\n",
+            "category": "MachineLearning",
+            "id": "b72bb319-e3ac-48ea-b1f9-f57ca2072364",
+            "question": "実験でいくつのモジュールを並列実行できますか。"
+        },
+        {
+            "answer": "大量のデータがブラウザーに送信される可能性があるため、Machine Learning Studio のパフォーマンスが低下しないように、データ サイズが制限されています。 すべてのデータ/結果を表示するには、データをダウンロードし、Excel などのツールを使用することをお勧めします。",
+            "category": "MachineLearning",
+            "id": "558f8c14-4dda-4c26-83cc-b667a62c2ea2",
+            "question": "ブラウザーで結果やデータをプレビューする際に行数と列数が制限されています。なぜですか?"
+        },
+        {
+            "answer": "Machine Learning Studio は、拡張性の高い強化された意思決定ツリー、ベイズの推薦システム、ディープ ニューラル ネットワーク、Microsoft Research で開発された意思決定のジャングルなど、最先端のアルゴリズムを提供します。 Vowpal Wabbit のようなスケーラブルなオープン ソース機械学習パッケージも含まれます。 Machine Learning Studio は、複数クラスと二項分類、回帰、クラスタリングで、機械学習アルゴリズムをサポートします。 \\n\\n「[Machine Learning Modules (Machine Learning のモジュール)](https://msdn.microsoft.com/library/azure/6d9e2516-1343-4859-a3dc-9673ccec9edc/)」の完全な一覧をご覧ください。",
+            "category": "MachineLearning",
+            "id": "7d6cb060-7755-4275-b391-d4c67b74ab36",
+            "question": "Machine Learning Studio では既存のどの ML アルゴリズムがサポートされていますか。"
+        },
+        {
+            "answer": "いいえ。ただし、Machine Learning Studio には、各アルゴリズムの結果を比較して問題に合ったアルゴリズムを決定できるさまざまな方法があります。",
+            "category": "MachineLearning",
+            "id": "7e28d157-10cf-41c1-bb5c-3bc618c95977",
+            "question": "データを使用するための正しい Machine Learning アルゴリズムを自動的に提案していますか。"
+        },
+        {
+            "answer": "[アルゴリズムの選択方法](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-algorithm-choice.md)」に関するページをご覧ください。",
+            "category": "MachineLearning",
+            "id": "73f04966-c24a-4541-ab3a-a7bbd589dc45",
+            "question": "提供されているアルゴリズムから 1 つのアルゴリズムを選ぶ際のガイドラインはありますか。 "
+        },
+        {
+            "answer": "いいえ。これらのアルゴリズムは、多くの場合、より優れたパフォーマンスを提供するためにコンパイル済みの言語で記述されています。",
+            "category": "MachineLearning",
+            "id": "94e26eff-3048-4275-a8d0-4b4856dc6b3c",
+            "question": "提供されているアルゴリズムは、R または Python で記述されていますか。 "
+        },
+        {
+            "answer": "いいえ。現在はプログラムによる再トレーニングのみがサポートされています。",
+            "category": "MachineLearning",
+            "id": "e3027b41-c45d-4a54-9166-4b5c9611af2d",
+            "question": "オンライン ラーニングの任意のサポートはありますか。"
+        },
+        {
+            "answer": "いいえ。",
+            "category": "MachineLearning",
+            "id": "92abac8d-df13-4463-b1a0-fc909bcb819c",
+            "question": "組み込みのモジュールを使用してニューラル ネットワーク モデルのレイヤーを視覚化できますか。"
+        },
+        {
+            "answer": "いいえ。",
+            "category": "MachineLearning",
+            "id": "c053d024-7bdf-4e20-ba43-3b44e5c180b7",
+            "question": "R のジョブはノード間に分散されますか。 "
+        },
+        {
+            "answer": "現在、新しいカスタム モジュールは R でのみ作成できます。",
+            "category": "MachineLearning",
+            "id": "df1927eb-a5c0-4bc7-adc3-99442f1fbd01",
+            "question": "C# または他の言語で独自のモジュールを作成できますか "
+        },
+        {
+            "answer": "Machine Learning Studio では現在、400 を超える CRAN R パッケージがサポートされています。対象となるすべてのパッケージが記載された最新の一覧については、[こちら](http://az754797.vo.msecnd.net/docs/RPackages.xlsx)を参照してください。 また、この一覧を自身で取得する方法については、「[R を使用した実験の拡張](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-extend-your-experiment-with-r.md)」を参照してください。 必要なパッケージがこの一覧にない場合は、[ユーザー フィードバック フォーラム](http://go.microsoft.com/fwlink/?LinkId=404231)でパッケージの名前を指定してください。",
+            "category": "MachineLearning",
+            "id": "d9c1aa18-52c3-4129-bbd6-be206bf6447b",
+            "question": "R モジュール\\n\\nMachine Learning Studio で使用できるのはどの R パッケージですか "
+        },
+        {
+            "answer": "はい。詳細については、「[Azure Machine Learning でカスタム R モジュールを作成する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-custom-r-modules.md)」をご覧ください。  \\n",
+            "category": "MachineLearning",
+            "id": "bd516b7c-0535-4759-a859-cd7b6df754c4",
+            "question": "カスタム R モジュールを構築することはできますか。 "
+        },
+        {
+            "answer": "いいえ。Studio には R 用の REPL (Read-Eval-Print-Loop) 環境はありません。",
+            "category": "MachineLearning",
+            "id": "6852025a-4c93-410c-a1ec-247e98acc96a",
+            "question": "R 用の REPL 環境はありますか。"
+        },
+        {
+            "answer": "現在はできません。ただし、1 つまたは複数の [Python スクリプトの実行](https://msdn.microsoft.com/library/azure/CDB56F95-7F4C-404D-BDE7-5BB972E6F232)モジュールを使用して、同じ結果を得ることができます。",
+            "category": "MachineLearning",
+            "id": "cec58170-650e-482f-a46e-f10a9d96906d",
+            "question": "カスタム Python モジュールを構築することはできますか。"
+        },
+        {
+            "answer": "Machine Learning Studio では Jupyter Notebooks を使用できます。 詳細については、 [Azure Machine Learning Studio への Jupyter Notebooks の導入](http://blogs.technet.com/b/machinelearning/archive/2015/07/24/introducing-jupyter-notebooks-in-azure-ml-studio.aspx)に関するブログ記事を参照してください。",
+            "category": "MachineLearning",
+            "id": "17e34841-0d4f-49a2-8908-dae9053757dc",
+            "question": "Python 用の REPL 環境はありますか。 "
+        },
+        {
+            "answer": "再トレーニング API を使用してください。 詳細については、「 [プログラムによる Machine Learning のモデルの再トレーニング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-retrain-models-programmatically.md)」をご覧ください。 サンプル コードは、「 [Microsoft Azure Maching Learning Retraining Demo (Microsoft Azure Maching Learning 再トレーニング デモ)](https://azuremlretrain.codeplex.com/)」にもあります。\\n\\n### 作成\\n\\n",
+            "category": "MachineLearning",
+            "id": "5ba387bb-e6f6-4f4a-b97f-73aca78342ba",
+            "question": "プログラムで Machine Learning のモデルを再トレーニングするにはどうすればよいですか?"
+        },
+        {
+            "answer": "要求応答サービス (RRS) は、待ち時間が短く、拡張性の高い Web サービスで、実験環境で作成、デプロイされたステートレスなモデルへのインターフェイスを提供するために使用されます。 バッチ実行サービス (BES) は、データ レコードのバッチに対して非同期でスコアを付けるサービスです。 BES への入力は、RRS で使用されるデータ入力と似ています。 主な違いは、BES が、Azure Blob Storage、Azure Table Storage、Azure SQL Database、HDInsight (Hive クエリ)、HTTP ソースなど、さまざまなソースからレコードのブロックを読み取る点です。 詳しくは、「[Azure Machine Learning Web サービスを使用する方法](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-consume-web-services.md)」をご覧ください。  \\n",
+            "category": "MachineLearning",
+            "id": "3d999a64-3e3b-43de-8c75-7bfc8fce8f60",
+            "question": "バッチ実行サービスと要求応答サービスとして予測モデルを実行するのはいつがいいですか。"
+        },
+        {
+            "answer": "既にデプロイされたサービスの予測モデルを更新するには、トレーニング済みのモデルの作成および保存に使用した実験を変更し、再実行します。 新しいバージョンのトレーニング済みモデルが使用できるようになると、Machine Learning Studio は Web サービスを更新するかどうかをたずねます。 デプロイされた Web サービスを更新する方法の詳細については、[Machine Learning Web サービスのデプロイ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-publish-a-machine-learning-web-service.md)に関するページをご覧ください。Retraining API を使用することもできます。 詳細については、「 [プログラムによる Machine Learning のモデルの再トレーニング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-retrain-models-programmatically.md)」をご覧ください。 サンプル コードは、「 [Microsoft Azure Maching Learning Retraining Demo (Microsoft Azure Maching Learning 再トレーニング デモ)](https://azuremlretrain.codeplex.com/)」にもあります。",
+            "category": "MachineLearning",
+            "id": "63835f4d-5fb8-4e29-9d9a-2b80f6b1d88e",
+            "question": "Web サービスにデプロイされたモデルはどのように更新できますか。 "
+        },
+        {
+            "answer": "予測モデルは、デプロイ後、Azure クラシック ポータル (クラシック Web サービスのみ) または Azure Machine Learning Web サービス ポータルから監視できます。 デプロイされた各サービスには専用のダッシュボードがあり、ここでそのサービスについての監視情報を参照できます。 デプロイされた Web サービスの管理方法の詳細については、「[Azure Machine Learning Web サービス ポータルを使用して Web サービスを管理する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-manage-new-webservice.md)」および「[Azure Machine Learning ワークスペースの管理](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-manage-workspace.md)」を参照してください。",
+            "category": "MachineLearning",
+            "id": "c4e93f91-d024-4bbc-abaa-642274e0961f",
+            "question": "運用環境にデプロイされた Web サービスはどのように監視できますか?"
+        },
+        {
+            "answer": "RRS の場合は通常、Web サービスの応答に結果が表示されます。 また、Azure Blob Storage に書き込むこともできます。 BES の場合、既定では BLOB に出力が書き込まれます。 また、[データのエクスポート](https://msdn.microsoft.com/library/azure/7A391181-B6A7-4AD4-B82D-E419C0D6522C) モジュールを使用してデータベースやテーブルに出力を書き込むこともできます。",
+            "category": "MachineLearning",
+            "id": "a6283ab8-7c44-4cf4-bcd5-5bd5be8f93a5",
+            "question": "RRS/BES の出力を確認できまる場所はありますか。"
+        },
+        {
+            "answer": "いいえ。Jupyter Notebooks と RStudio から直接 Web サービスを作成することもできます。",
+            "category": "MachineLearning",
+            "id": "a053688a-3b99-4159-a651-e679961b1bdc",
+            "question": "Web サービスを作成できるのは Machine Learning Studio で作成されたモデルからのみですか?"
+        },
+        {
+            "answer": "エラー コードと説明の一覧は、「 [Machine Learning Module Error Codes (Machine Learning モジュールのエラー コード)](https://msdn.microsoft.com/library/azure/dn905910.aspx) 」を参照してください。",
+            "category": "MachineLearning",
+            "id": "87bfe4ef-8097-4c0a-9d77-c983cdef5f99",
+            "question": "エラー コードの詳細はどこで入手できますか?"
+        },
+        {
+            "answer": "現時点では、既定のエンドポイントは 1 つのエンドポイントにつき 20 件の同時 RRS 要求でプロビジョニングされます。 これは、[Web サービスのスケーリング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/machine-learning/machine-learning-scaling-webservice.md)に関するページで説明されているように、エンドポイントあたりの同時要求を 200 件まで拡張でき、Web サービスごとのエンドポイント数は 10,000 個まで拡張できます。 BES の場合、各エンドポイントは一度に 40 件の要求を処理でき、40 件を超えた要求はキューに登録されます。 これらのキューに登録された要求は、キューから放出されると自動的に実行されます。",
+            "category": "MachineLearning",
+            "id": "63e89a72-90af-4e75-a4b0-3056a5fdb462",
+            "question": "Web サービスのスケーラビリティはどれくらいですか。"
+        },
+        {
+            "answer": "Machine Learning Studio のモジュールは、一般的に、最大 10 GB の高密度数値データのデータセットをサポートしています。 モジュールが 1 つ以上の入力を受け取る場合、10 GB はすべての入力の合計です。 インジェストの前に、Hive クエリ、Azure SQL Database クエリ、または[カウントを使用した学習](https://msdn.microsoft.com/library/azure/dn913056.aspx)モジュールによる前処理を使用して、さらに大きなデータセットをサンプリングすることもできます。\\n\\n次の種類のデータは、特徴の正規化の際に、より大きなデータセットに展開できますが、10 GB 未満に制限されています。\\n\\n*   スパース\\n\\n*   カテゴリ\\n\\n*   文字列\\n\\n*   バイナリ データ\\n  \\n\\n\\n次のモジュールは、10 GB 未満のデータセットに制限されています。\\n\\n*   推奨モジュール\\n\\n*   Synthetic Minority Oversampling Technique (SMOTE) モジュール\\n\\n*   スクリプト モジュール: R、Python、SQL\\n\\n*   出力データ サイズが入力データ サイズを超えるモジュール (\"結合\"、\"特徴ハッシュ\" など)\\n\\n*   イテレーションの数が非常に大きい場合のクロス検証、調整モデル ハイパーパラメーター、順序回帰、一対全多クラス\\n  \\n\\n\\n数 GB を超えるデータセットの場合は、ローカル ファイルから直接アップロードするのではなく、Azure Storage または Azure SQL Database にデータをアップロードするか、HDInsight を使用してください。\\n  \\n",
+            "category": "MachineLearning",
+            "id": "0bcbe869-0bca-4441-a0b5-3fb0df96c7fb",
+            "question": "トレーニングに使用できるデータの量はどれくらいですか?"
+        },
+        {
+            "answer": "行と列は、それぞれ .NET 制限の相互作用数の上限 2,147,483,647 に制限されています",
+            "category": "MachineLearning",
+            "id": "f72408a4-8e1e-4c00-9dea-f8b702bdbccf",
+            "question": "ベクターのサイズに制限はありますか。"
+        },
+        {
+            "answer": "Web サービスがデプロイされた後に、そのサービスに対して既定のエンドポイントが作成されます。 既定のエンドポイントは、その API キーを使用して呼び出すことができます。 エンドポイントの追加は、Azure クラシック ポータルからそれぞれのキーを使用して行うか、Web Service Management API を使用してプログラム的に行うことができます。 Web サービスを呼び出すには、アクセス キーが必要です。 ",
+            "category": "MachineLearning",
+            "id": "66a54cbd-ad05-425a-a56d-36297d266855",
+            "question": "既定では Web サービスの http エンドポイントにだれがアクセスできますか?エンドポイントへのアクセスはどのようにして制限できますか?"
+        },
+        {
+            "answer": "Machine Learning Studio は、ワークフローの実行時に中間データを保存する際、ユーザーが指定した Azure ストレージ アカウントを使用します。 このストレージ アカウントは、ワークスペースの作成時に Machine Learning Studio に提供されます。 ワークスペースの作成後にストレージ アカウントが削除され、見つけることができない場合は、ワークスペースが機能しなくなり、そのワークスペースのすべての実験が失敗します。\\n\\n誤ってストレージ アカウントを削除した場合は、削除されたストレージ アカウンと同じリージョンに同じ名前のストレージ アカウントを再作成します。 その後、アクセス キーを再同期します",
+            "category": "MachineLearning",
+            "id": "645879dd-82c3-4a9c-b63f-9bac4836d035",
+            "question": "Azure ストレージ アカウントが見つからない場合はどうなりますか?"
+        },
+        {
+            "answer": "Machine Learning Studio は、ワークフローの実行時に中間データを格納する際、ユーザーが指定した Azure ストレージ アカウントを使用します。 このストレージ アカウントは、ワークスペースの作成時に Machine Learning Studio に提供され、アクセス キーはそのワークスペースに関連付けられます。 ワークスペースの作成後にアクセス キーが変更されると、ワークスペースはストレージ アカウントにアクセスできなくなります。 その場合、機能が停止し、そのワークスペース内のすべての実験が失敗します。\\n\\nストレージ アカウントのアクセス キーを変更した場合は、Azure クラシック ポータルを使用してワークスペースのアクセス キーを再同期します。",
+            "category": "MachineLearning",
+            "id": "601c55ee-3be3-47d4-93c1-e85589ec4407",
+            "question": "ストレージ アカウントのアクセス キーの同期が失われてしまった場合はどうなりますか?"
+        },
+        {
+            "answer": "トランザクションとは、Azure Machine Learning が応答する API 呼び出しです。 要求応答サービス (RRS) 呼び出しとバッチ実行サービス (BES) 呼び出しからのトランザクションは、集計のうえ、課金プランに基づいて課金されます。",
+            "category": "MachineLearning",
+            "id": "0ef8e3b2-145f-4eaf-ad53-8b8c85b61656",
+            "question": "トランザクションとは何ですか?"
+        },
+        {
+            "answer": "はい。RRS と BES からのトランザクションは、集計のうえ、課金プランに基づいて課金されます。",
+            "category": "MachineLearning",
+            "id": "4b4b2518-7017-4768-8059-a9542fb9c9a5",
+            "question": "プランに含まれるトランザクションの数量は、RRS と BES 両方のトランザクションに対して使用できますか?"
+        },
+        {
+            "answer": "API コンピューティング時間は、Machine Learning コンピューティング リソースを使用した API 呼び出しの実行にかかる時間の課金単位です。 実行したすべての呼び出しが、課金を目的に集計されます。",
+            "category": "MachineLearning",
+            "id": "5a746d46-2143-4072-a53b-3c20911e265f",
+            "question": "API コンピューティング時間とは何ですか?"
+        },
+        {
+            "answer": "実稼働 API 呼び出しにかかる時間は状況により大幅に異なりますが、一般的には数百ミリ秒から数秒までの範囲です。 データ処理と機械学習モデルの複雑さによっては、API 呼び出しに数分かかることもあります。 実稼働 API 呼び出しにかかる時間を推定するための最適な方法は、Machine Learning サービスでモデルのベンチマークを実行することです。",
+            "category": "MachineLearning",
+            "id": "b81f2638-cdee-4d28-9b3a-7343d7fdbab6",
+            "question": "通常、実稼働 API 呼び出しにはどれくらいの時間がかかりますか?"
+        },
+        {
+            "answer": "Studio コンピューティング時間は、Studio でコンピューティング リソースを実験に使用した時間の総計を表す課金単位です。",
+            "category": "MachineLearning",
+            "id": "cd1b91f0-1aa6-4066-bca2-9cf365204446",
+            "question": "Studio コンピューティング時間とは何ですか?"
+        },
+        {
+            "answer": "Resource Manager ベースの Web サービスでは、課金プランのプロビジョニングに使用できる価格レベルが複数用意されています。 開発/テスト価格レベルでは、含まれる数量が制限付きで提供され、費用をかけることなく、実験を Web サービスとしてテストできます。 Web サービスを使用してみることで、動作方法の確認ができます。",
+            "category": "MachineLearning",
+            "id": "2cb67186-4d48-447b-8829-5622f8310f37",
+            "question": "新しい (Azure Resource Manager ベースの) Web サービスでの開発/テスト レベルとは何のためのものですか?"
+        },
+        {
+            "answer": "Machine Learning の Free レベルでは、別個のストレージは必要ありませんし、使用することもできません。 Machine Learning の Standard レベルでは、ユーザーが Azure Storage アカウントを持っていることが必要です。 Azure Storage の料金は[別途請求されます](https://azure.microsoft.com/pricing/details/storage/)。",
+            "category": "MachineLearning",
+            "id": "d3065a04-a93d-4e47-8e61-8d266640e226",
+            "question": "ストレージには別に課金されますか?"
+        },
+        {
+            "answer": "はい。 詳細については、「[Machine Learning の価格](https://azure.microsoft.com/en-us/pricing/details/machine-learning/)」のサービス レベル アグリーメント (SLA) に関する説明をご覧ください。",
+            "category": "MachineLearning",
+            "id": "885706f3-1308-444b-a3a8-07b96feaa1e7",
+            "question": "Machine Learning では高可用性がサポートされますか?"
+        },
+        {
+            "answer": "Machine Learning サービスはマルチテナント サービスです。 バックエンドで実際に使用されるコンピューティング リソースの種類はさまざまで、パフォーマンスと予測可能性を向上させるために最適化されます。\\n\\n### 新しい (Resource Manager ベースの) Web サービスの管理\\n\\n",
+            "category": "MachineLearning",
+            "id": "3fb5d44f-73d6-422c-8692-f8b0bff681e7",
+            "question": "実稼働 API 呼び出しの実行には、どのような種類のコンピューティング リソースが使用されますか?"
+        },
+        {
+            "answer": "プランはサブスクリプションから削除され、使用量に対して按分計算で課金されます。\\n\\n> [!NOTE] Web サービスが使用中のプランを削除することはできません。 使用中のプランを削除するには、新しいプランを Web サービスに割り当てるか、Web サービスを削除する必要があります。\\n\\n",
+            "category": "MachineLearning",
+            "id": "0ca25693-ec5a-4664-a510-ec45892fcab7",
+            "question": "プランを削除すると、どうなりますか?"
+        },
+        {
+            "answer": "プラン インスタンスとは、課金プランに追加可能である含まれる数量の単位です。 課金プランの課金レベルを選択すると、1 つのインスタンスが提供されます。 含まれる数量を増やす必要がある場合は、選択した課金レベルのインスタンスをプランに追加することができます。",
+            "category": "MachineLearning",
+            "id": "c9bacbc7-6521-4f54-91a6-54e07ee024f7",
+            "question": "プラン インスタンスとは何ですか?"
+        },
+        {
+            "answer": "開発/テスト価格レベルのインスタンスは、1 つのサブスクリプションにつき 1 つとなります。\\n\\nStandard S1、Standard S2、Standard S3 レベルでは、必要なだけインスタンスを追加できます。\\n\\n> [!NOTE] 予想される使用量によっては、現在のレベルにインスタンスを追加するよりも、含まれる数量の多いレベルにアップグレードした方が、コスト効果の向上につながる場合があります。\\n\\n",
+            "category": "MachineLearning",
+            "id": "2cf51cc4-951f-4226-bd79-ee84feb48f85",
+            "question": "プランスのインスタンスはいくつ追加できますか?"
+        },
+        {
+            "answer": "古いプランが削除され、現在の使用量に対して按分計算で課金されます。 残りの期間用には、アップグレード/ダウングレード後のレベルに含まれる数量をすべて含む新しいプランが作成されます。\\n\\n> [!NOTE] 含まれる数量は期間ごとに割り当てられ、未使用分は繰り越されません。\\n\\n",
+            "category": "MachineLearning",
+            "id": "e2b7b4e2-55f5-4eea-954b-6609feb6ecbe",
+            "question": "プラン レベルを変更 (アップグレード/ダウングレード) すると、どうなりますか?"
+        },
+        {
+            "answer": "数量は按分計算で割り当てられ、有効になるまで 24 時間かかる場合があります。",
+            "category": "MachineLearning",
+            "id": "c664d524-85e1-4b65-b4ac-05e8228fbdae",
+            "question": "プラン内のインスタンスの数を増やすと、どうなりますか?"
+        },
+        {
+            "answer": "インスタンスはサブスクリプションから削除され、使用量に対して按分計算で課金されます。\\n\\n### 新しい (Resource Manager ベースの) Web サービス プランへのサインアップ\\n\\n",
+            "category": "MachineLearning",
+            "id": "aa2f2780-1457-4b7d-bf20-77675da441f9",
+            "question": "プランのインスタンスを削除すると、どうなりますか?"
+        },
+        {
+            "answer": "課金プランの作成方法は 2 とおりあります。\\n\\nResource Manager ベースの Web サービスを最初にデプロイするときには、既存のプランを選択することも、新しいプランを作成することもできます。\\n\\nこの方法で作成されたプランは既定のリージョンに含まれ、Web サービスはそのリージョンにデプロイされます。\\n\\n既定のリージョン以外のリージョンにサービスをデプロイする場合、サービスをデプロイする前に課金プランを定義したいことがあります。\\n\\nこのような場合は、Azure Machine Learning Web サービス ポータルにサインインして、プランのページに移動します。 そのページから、プランの追加や削除、既存のプランの変更を行うことができます。\\n",
+            "category": "MachineLearning",
+            "id": "3189ca9d-2b06-4399-92b9-ad44e5988ff5",
+            "question": "プランにサインアップするにはどうすればよいですか?"
+        },
+        {
+            "answer": "Standard S1 レベルから開始して、サービスの使用状況を監視することをお勧めします。 含まれる数量の消費が速いと感じたら、インスタンスを追加するか、上位のレベルに移行して割引率を上げることもできます。 請求サイクル全体にわたり、必要に応じて課金プランを調整することができます。",
+            "category": "MachineLearning",
+            "id": "4c386682-61ba-4886-a2dc-72fcedf08f8d",
+            "question": "最初はどのプランを選択すればよいですか?"
+        },
+        {
+            "answer": "新しい課金プランは、新しい Web サービスがサポートされている 3 つの運用リージョンで利用できます。\\n\\n*   米国中南部\\n*   西ヨーロッパ\\n*   東南アジア",
+            "category": "MachineLearning",
+            "id": "7e28cce3-f98e-4243-bfd5-c84aa04ba66e",
+            "question": "新しいプランはどのリージョンで利用できますか?"
+        },
+        {
+            "answer": "はい。 プランの価格設定はリージョンによって異なります。 Web サービスを別のリージョンにデプロイするときは、そのリージョンに固有のプランを割り当てる必要があります。 詳細については、「[リージョン別の利用可能な製品](https://azure.microsoft.com/regions/services/)」を参照してください。\\n\\n### 新しい Web サービス - 超過料金\\n\\n",
+            "category": "MachineLearning",
+            "id": "b193e72d-00bd-4467-bfd0-c5d8c571d4b3",
+            "question": "私は複数のリージョンに Web サービスを所有しています。すべてのリージョンにプランが必要ですか?"
+        },
+        {
+            "answer": "Azure Machine Learning Web サービス ポータルの [プラン] ページで、すべてのプランの使用状況を確認することができます。 ポータルにサインインして、[プラン] メニュー オプションをクリックします。\\n\\n表の [トランザクション] 列と [コンピューティング] 列に、プランに含まれる数量と使用率が表示されます。\\n",
+            "category": "MachineLearning",
+            "id": "49924051-cfef-4389-ba3b-d9615faa749a",
+            "question": "Web サービスの使用量が超過しているかどうかを確認するには、どうすればよいですか?"
+        },
+        {
+            "answer": "開発/テスト価格レベルが割り当てられているサービスは、次の期間まで、または有料レベルに移行するまで停止します。",
+            "category": "MachineLearning",
+            "id": "d05a465c-7110-40a0-a606-e64ebea9fb32",
+            "question": "開発/テスト価格レベルに含まれる数量を使い切ると、どうなりますか?"
+        },
+        {
+            "answer": "はい。クラシック Web サービスは、Azure Machine Learning でも引き続き利用できます。\\n\\n### Azure Machine Learning の Free および Standard レベル\\n\\n",
+            "category": "MachineLearning",
+            "id": "e2303d58-6e91-4e77-81f5-f3bfe3699340",
+            "question": "従量課金制は現在も利用できますか?"
+        },
+        {
+            "answer": "Azure Machine Learning の Free レベルは、Azure Machine Learning Studio を深く体験していただくためのものです。 サインアップに必要なのは、Microsoft アカウントだけです。 Free レベルには、 [Microsoft アカウント](https://www.microsoft.com/account/default.aspx)1 つにつき 1 つの Azure Machine Learning Studio ワークスペースへの無料アクセスが含まれます。 このレベルでは、最大 10 GB のストレージを使用でき、モデルをステージング API として運用できます。 Free レベルのワークロードは SLA の対象外であり、開発や個人用の目的にのみ使用されます。\\n\\nFree レベルのワークスペースには次の制限事項があります。\\n\\n*   ワークロードは、SQL Server を実行するオンプレミスのサーバーに接続してデータにアクセスすることはできません。\\n*   新しい Resource Manager ベースの Web サービスをデプロイすることはできません。",
+            "category": "MachineLearning",
+            "id": "856cd7da-ed4a-4535-acef-9ac108f82f02",
+            "question": "Azure Machine Learning の Free レベルには何が含まれますか?"
+        },
+        {
+            "answer": "必要なのは、Microsoft アカウントだけです。 [Azure Machine Learning ホーム](https://azure.microsoft.com/services/machine-learning/)に移動し、[Start Now (今すぐ開始)] ボタンをクリックします。 ご自分の Microsoft アカウントでサインインすると、Free レベル用のワークスペースが作成されます。 すぐに Machine Learning の実験を作成して試すことができます。",
+            "category": "MachineLearning",
+            "id": "6efd634c-3fac-4db1-8bca-eeac0ff42c97",
+            "question": "Azure Machine Learning Free レベルにサインアップするには、どうすればよいですか?"
+        },
+        {
+            "answer": "いいえ、できません。Standard レベルは、これらのレベルが導入される前から利用可能だった Machine Learning サービスのバージョンと同等のものです。",
+            "category": "MachineLearning",
+            "id": "2be134f1-851b-42cb-94be-af26ff397c86",
+            "question": "既に所有している Azure Blob Storage アカウントを指定して、Free レベルで使用することはできますか?"
+        },
+        {
+            "answer": "はい。機械学習モデルを、Free レベルに含まれるステージング API サービスとして運用することができます。 ステージング API サービスを運用環境に移行し、運用可能にするサービスの実稼働エンドポイントを取得するには、Standard レベルを使用する必要があります。",
+            "category": "MachineLearning",
+            "id": "27b10dea-1d2a-4e2f-95b1-cc5845c285a8",
+            "question": "Free レベルで自分の機械学習モデルを API としてデプロイすることはできますか?"
+        },
+        {
+            "answer": "[Microsoft Azure 無料試用版](https://azure.microsoft.com/free/)では、任意の Azure サービスに 1 か月間適用できるクレジットを提供しています。 Azure Machine Learning の Free レベルは、特に非運用環境のワークロード用に Azure Machine Learning への継続的なアクセスを提供します。",
+            "category": "MachineLearning",
+            "id": "aee5bef8-71c6-432a-9546-c97282e68b44",
+            "question": "Azure 無料試用版と Azure Machine Learning の Free レベルの違いは何ですか?"
+        },
+        {
+            "answer": "Free レベルから Standard レベルに実験をコピーするには:\\n\\n1.  Azure Machine Learning Studio にサインインし、最上部のナビゲーション バーのワークスペース セレクターに Free ワークスペースと Standard ワークスペースの両方が表示されていることを確認します。\\n2.  Standard ワークスペースが選択されている場合は、Free ワークスペースに切り替えます。\\n3.  コピーする実験を実験リスト ビューで選択し、[コピー] コマンド ボタンをクリックします。\\n4.  ポップアップ ダイアログ ボックスから Standard ワークスペースを選択し、[コピー] ボタンをクリックします。 すべての関連するデータセット、学習済みモデルなどが、実験と共に Standard ワークスペースにコピーされます。\\n5.  Standard ワークスペースで、実験を再実行し、Web サービスを再発行することが必要です。\\n\\n### Studio ワークスペース\\n\\n",
+            "category": "MachineLearning",
+            "id": "c87b8082-c8bb-4fd8-9021-bdeb4d7eac09",
+            "question": "Free レベルから Standard レベルへの実験の移行はどのように行いますか?"
+        },
+        {
+            "answer": "ワークスペースの料金は、1 件の請求で適用可能なメーターごとに別々に表示されます。",
+            "category": "MachineLearning",
+            "id": "c156aa1f-3d6a-4ee6-801c-0c10fd3f458d",
+            "question": "ワークスペースが異なると、表示される請求内容も異なりますか?"
+        },
+        {
+            "answer": "Machine Learning サービスはマルチテナント サービスです。 バックエンドで実際に使用されるコンピューティング リソースの種類はさまざまで、パフォーマンスと予測可能性を向上させるために最適化されます",
+            "category": "MachineLearning",
+            "id": "91d5b9b6-93e8-4853-a03c-34e909f1e145",
+            "question": "実験の実行には、どのような種類のコンピューティング リソースが使用されますか?"
+        },
+        {
+            "answer": "ゲスト アクセスとは、機能が制限された試用版です。 費用をかけず、認証もなしで、Azure Machine Learning Studio で実験を作成して実行できます。 ゲスト セッションは非永続的で保存ができず、利用できる時間は 8 時間に制限されます。 他にも、R と Python がサポートされていない、ステージング API がない、データセットのサイズとストレージの容量が制限されている、などの制限事項があります。 一方 Microsoft アカウントでサインインしたユーザーの場合は、前述した Machine Learning Studio の Free レベルへのフル アクセスが提供され、永続ワークスペースやさらに包括的な機能を使用できます。 [https://studio.azureml.net](https://studio.azureml.net/) の Get started (開始) をクリックして Guest Access (ゲスト アクセス) または Sign In with Microsoft account (Microsoft アカウントでサインイン) を選択し、無料の Machine Learning の機能をお試しください。",
+            "category": "MachineLearning",
+            "id": "4b3358a7-85da-409e-9b54-c49df07d2b18",
+            "question": "Azure Machine Learning Studio に対するゲスト アクセスとは何ですか?"
+        },
+        {
+            "answer": "詳細は、プロジェクトの種類によって異なります。 Web アプリケーションの場合:\\n\\n*   \\n\\n次のファイルがプロジェクトに追加されます。\\n\\n    *   ApplicationInsights.config\\n    *   ai.js\\n*   \\n\\nInstalls these NuGet packages:\\n\\n    *   \\n\\nApplication Insights API - コア API\\n\\n    *   \\n\\nApplication Insights API for Web Applications - サーバーからテレメトリを送信するために使用されます\\n\\n    *   \\n\\nApplication Insights API for JavaScript Applications - クライアントからテレメトリを送信するために使用されます\\n\\nThe packages include these assemblies:\\n\\n    *   \\n\\nMicrosoft.ApplicationInsights\\n\\n    *   \\n\\nMicrosoft.ApplicationInsights.Platform\\n\\n*   \\n\\n次の項目を挿入します。\\n\\n    *   web.config\\n    *   packages.config\\n*   \\n\\n(新しいプロジェクトのみ。[Application Insights を既存のプロジェクトに追加している場合](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-overview.md)は、手動でこの操作を行う必要があります)。これらを Application Insights リソース ID で初期化するためのスニペットを、クライアントとサーバーのコードに挿入します。 たとえば、MVC アプリでは、Views/Shared/_Layout.cshtml マスター ページにコードが挿入されます。\\n",
+            "category": "AppInsights",
+            "id": "0174915d-8319-40f0-a8d2-2938b2f974b7",
+            "question": "Application Insights によってどのような変更がプロジェクトに加えられますか?"
+        },
+        {
+            "answer": "お使いのアプリケーションに適切な SDK については、「 [リリース ノート](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-release-notes.md) 」をご覧ください。",
+            "category": "AppInsights",
+            "id": "5aa77787-123a-4dcd-8585-b72c760c9bf6",
+            "question": "以前のバージョンの SDK からアップグレードする方法。"
+        },
+        {
+            "answer": "ソリューション エクスプローラーで、 `ApplicationInsights.config` を右クリックし、[ Application Insights の更新] を選択します。 Azure の既存または新規のリソースにデータを送信できます。 更新ウィザードでは、サーバー SDK のデータの送信先を決定する、ApplicationInsights.config のインストルメンテーション キーを変更します。 [すべて更新] を選択解除している場合を除き、Web ページ内のキーが表示される場所でもキーが変更されます。",
+            "category": "AppInsights",
+            "id": "d92cd781-cfbd-49bc-97fc-9d6691bfd25e",
+            "question": "自分のプロジェクトがデータを送信する Azure のリソースを変更するにはどうすればいいですか?"
+        },
+        {
+            "answer": "IIS Web サーバーで Web アプリ内の Application Insights を構成するために使用できるデスクトップ アプリです。 テレメトリは収集されないので、アプリの構成中以外は停止しておくことができます。\\n\\n[詳細情報](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-monitor-performance-live-website-now.md#questions)",
+            "category": "AppInsights",
+            "id": "067be211-2b96-498f-8d24-8a4f77e4a797",
+            "question": "Status Monitor とは何ですか?"
+        },
+        {
+            "answer": "はい。サーバーで以下のようなものを記述できます。\\n\\n*   選択されたテレメトリ項目に対して、それがアプリから送信される前にフィルター処理やプロパティの追加を行うテレメトリ プロセッサ。\\n*   テレメトリの全項目にプロパティを追加するテレメトリ初期化子。\\n\\nASP.NET の場合は[こちら](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-api-filtering-sampling.md)、Java の場合は[こちら](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-java-filter-telemetry.md)で詳細を確認してください。",
+            "category": "AppInsights",
+            "id": "7c9155cf-3c28-4c7d-a1c5-73e6024440a0",
+            "question": "一部のテレメトリを除外または変更することはできますか?"
+        },
+        {
+            "answer": "Web クライアントの IP アドレス (IPv4 または IPv6) の検索に [GeoLite2](http://dev.maxmind.com/geoip/geoip2/geolite2/) を使用しています。\\n\\n*   ブラウザー テレメトリ: 送信者の IP アドレスを収集します。\\n*   サーバー テレメトリ: Application Insights モジュールでクライアントの IP アドレスが収集されます。 `X-Forwarded-For` が設定されている場合は収集されません。\\n\\n別のヘッダーから IP アドレスを取得するように `ClientIpHeaderTelemetryInitializer` を構成できます。 たとえば一部のシステムでは、プロキシ、ロード バランサー、または CDN によって IP アドレスが `X-Originating-IP` に移動されます。 [詳細情報](http://apmtips.com/blog/2016/07/05/client-ip-address/)。\\n\\n[Power BI を使用する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-export-power-bi.md)と、要求テレメトリを地図上に表示できます。\\n",
+            "category": "AppInsights",
+            "id": "7b106c25-c865-4b16-ae6e-c8fe563bacb5",
+            "question": "市区町村や国などの geo ロケーション データはどのように計算されますか?"
+        },
+        {
+            "answer": "[データの保持とプライバシー](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-data-retention-privacy.md)に関するページをご覧ください。",
+            "category": "AppInsights",
+            "id": "062d599b-8f70-42b2-9698-7c96271ed51c",
+            "question": "ポータルでのデータ保持期間はどのくらいですか? セキュリティで保護されていますか?"
+        },
+        {
+            "answer": "コードでそのようなデータを送信する場合は可能性があります。 また、スタック トレース内の変数に PII が含まれている場合にも、送信される可能性があります。 その PII の処理が適切に行われるように、開発チームでリスク評価を実施する必要があります。 [こちら](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-data-retention-privacy.md)から、データ リテンション期間とプライバシーについての詳細を確認してください。\\n\\nクライアントの Web アドレスの最終オクテットは、ポータルでの取り込み後に必ず 0 に設定されます。\\n",
+            "category": "AppInsights",
+            "id": "112d1609-2b73-448a-a6e0-d5d06f7954ca",
+            "question": "個人を特定できる情報 (PII) がテレメトリとして送信される可能性はありますか?"
+        },
+        {
+            "answer": "\\n\\n*   監視ソリューションにおいてはよくあることです。\\n*   iKey を使用してデータを盗むことはできません。\\n*   データ スキューやアラートのトリガーに使用される可能性はあります。\\n*   これまでに、お客様がそのような問題に遭遇したという事例は報告されていません。\\n\\n以下のような方法で対処できます。\\n\\n*   クライアント データとサーバー データに 2 つの独立した iKey (別々の Application Insights リソース) を使用します。 または\\n*   サーバーで実行するためのプロキシを記述し、Web クライアントからそのプロキシを介してデータを送信します。",
+            "category": "AppInsights",
+            "id": "acdf2bd4-86a8-42b4-bf52-c317937f2925",
+            "question": "Web ページのソースに自分の iKey が表示されます。"
+        },
+        {
+            "answer": "POST データは自動ではログに記録されませんが、TrackTrace 呼び出しを使用してメッセージ パラメーターにデータを格納できます。 文字列プロパティの制限よりもサイズ制限は大きいですが、フィルター処理には使用できません。",
+            "category": "AppInsights",
+            "id": "c1e4a785-f468-4a4c-8d1a-c70cfde93084",
+            "question": "診断検索で POST データを表示する方法を教えてください。"
+        },
+        {
+            "answer": "1 つのビジネス システム内のすべてのコンポーネントまたはロールに対しては、単一リソースを使用します。 開発、テスト、およびリリースのバージョン、および独立したアプリケーションに対しては、複数のリソースを使用します。\\n\\n*   [こちら](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-separate-resources.md)の説明を参照してください\\n*   [例 - worker ロールと web ロールを使用したクラウド サービス](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-cloudservices.md)",
+            "category": "AppInsights",
+            "id": "a102e6d5-c9bd-441d-8df8-bd1cf83e9dbb",
+            "question": "Application Insights リソースは、単一リソースと複数リソースのどちらを使用すべきですか?"
+        },
+        {
+            "answer": "*   [こちら](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-separate-resources.md)で説明しています\\n*   [例 - worker ロールと web ロールを使用したクラウド サービス](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-cloudservices.md)",
+            "category": "AppInsights",
+            "id": "2a829c86-4491-40f6-b66e-f6b7435729aa",
+            "question": "インストルメンテーション キーを動的に変更するには、どうすればよいですか?"
+        },
+        {
+            "answer": "*   JavaScript SDK では、Web クライアントにユーザー Cookie を設定することで戻ってきたユーザーを識別し、セッション Cookie を設定することでグループ アクティビティを識別します。\\n*   クライアント側のスクリプトがない場合は、[サーバーで Cookie を設定](http://apmtips.com/blog/2016/07/09/tracking-users-in-api-apps/)できます。\\n*   1 人の実在するユーザーが、複数の異なるブラウザーや、プライベート/シークレット ブラウズ、または複数のコンピューターでサイトを利用した場合、それらは複数のユーザーとしてカウントされます。\\n*   複数のコンピューターやブラウザー間でログイン済みのユーザーを識別するには、[setAuthenticatedUserContect()](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-api-custom-events-metrics.md#authenticated-users) の呼び出しを追加します。",
+            "category": "AppInsights",
+            "id": "47161038-b854-44fc-b651-e6f6f324df21",
+            "question": "ユーザー数とセッション数とは何ですか?"
+        },
+        {
+            "answer": "表示内容表示方法用途可用性グラフ[Web テスト](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-monitor-web-app-availability.md)Web アプリが稼働しているか確認するサーバー アプリ パフォーマンス: 応答時間、...[Application Insights をプロジェクトに追加する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-asp-net.md)か、[AI Status Monitor をサーバーにインストールする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-monitor-performance-live-website-now.md) (または独自のコードを記述して[依存関係を追跡する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-api-custom-events-metrics.md#trackdependency))パフォーマンスの問題を検出する依存関係テレメトリ[AI Status Monitor をサーバーにインストールする](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-monitor-performance-live-website-now.md)データベースや、その他の外部コンポーネントの問題を診断する例外からスタック トレースを取得する[コード内に TrackException 呼び出しを挿入する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-asp-net-exceptions.md) (自動で報告されるものもある)例外を検出して診断するログ トレースの検索[ログ アダプターを追加する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-asp-net-trace-logs.md)例外、パフォーマンスの問題を診断するクライアントの利用状況の基本情報: ページ ビュー、セッション、...[Web ページの JavaScript の初期化子](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-javascript.md)Usage analyticsクライアントのカスタム メトリック[Web ページでの呼び出しの追跡](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-api-custom-events-metrics.md)ユーザー エクスペリエンスを向上させるサーバーのカスタム メトリック[サーバーでの呼び出しの追跡](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-api-custom-events-metrics.md)Business intelligence",
+            "category": "AppInsights",
+            "id": "2fde12fb-17dc-431c-b5b0-2b0e0d5e2b71",
+            "question": "Application Insights の機能をすべて有効にしているでしょうか?"
+        },
+        {
+            "answer": "\\n\\n[サンプリング](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-sampling.md)により、アプリからポータルに実際に送信されたテレメトリ項目 (要求、カスタム イベントなど) の数が減少します。 検索グラフには、実際に受信した項目の数が表示されます。 イベント数を表示するメトリック グラフには、発生した元のイベントの数が表示されます。\\n\\n送信される各項目には、その項目を表す元のイベントの数を示した `itemCount` プロパティが含まれています。 Analytics で次のクエリを実行すると、サンプリング操作を確認できます。\\n\\n` requests | summarize original_events = sum(itemCount), transmitted_events = count() `\\n",
+            "category": "AppInsights",
+            "id": "b5670960-9a8f-497e-ba77-acbd305fcdbf",
+            "question": "検索グラフとメトリック グラフで数が等しくないのはなぜですか?"
+        },
+        {
+            "answer": "Azure アラートはメトリックにのみ設定できます。 イベントが発生するたびにしきい値を超える、カスタム メトリックを作成してください。 その後、メトリックにアラートを設定します。 次の点に注意: メトリックがしきい値を超えると、超えたときの方向がどちらであっても通知が届くことになります。初期値がしきい値より高くても低くても、最初にしきい値を超えるまで通知は届きません。常に数分の待ち時間が発生します。",
+            "category": "AppInsights",
+            "id": "99e354b0-80a4-408d-bd2f-5325fd4037cd",
+            "question": "イベントにアラートを設定するには、どうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n*   Application Insights の収集エンドポイントがあるデータ センターに Azure Web アプリがホストされている場合、料金はかかりません。\\n*   ホスト データ センターに収集エンドポイントがない場合は、アプリのテレメトリに対して [Azure の送信料金](https://azure.microsoft.com/pricing/details/bandwidth/)が発生します。\\n\\nこれは、Application Insights リソースがホストされている場所ではなく、 単に Microsoft のエンドポイントの割り当てによって決まります。\\n",
+            "category": "AppInsights",
+            "id": "0745fabb-dda8-4799-a348-39588ef544f1",
+            "question": "Azure Web アプリと Application Insights の間でデータ転送料金は発生しますか?"
+        },
+        {
+            "answer": "Microsoft の SDK と SDK API (app-insights-api-custom-events-metrics.md) を使用するようお勧めします。 各種[プラットフォーム](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-platforms.md)向けに異なる SDK が用意されています。 これらの SDK では、バッファリング、圧縮、調整、再試行などを処理します。 ただし、[取り込みスキーマ](https://github.com/Microsoft/ApplicationInsights-dotnet/tree/develop/Schema/PublicSchema)と[エンドポイント プロトコル](https://github.com/Microsoft/ApplicationInsights-Home/blob/master/EndpointSpecs/ENDPOINT-PROTOCOL.md)はパブリックです。",
+            "category": "AppInsights",
+            "id": "01ce4164-5808-42f2-9cae-c1cae7271da6",
+            "question": "テレメトリを Application Insights ポータルに送信できますか?"
+        },
+        {
+            "answer": "以下に 2 つの方法を示します。\\n\\n### ファイアウォール ドア\\n\\nWeb サーバーから Microsoft のエンドポイント [https://dc.services.visualstudio.com:443](https://dc.services.visualstudio.com/) と [https://rt.services.visualstudio.com:443](https://rt.services.visualstudio.com/) にテレメトリを送信できるようにします。\\n\\n### プロキシ\\n\\nApplicationInsights.config 内に次のコードを設定し、トラフィックをサーバーからイントラネット上のゲートウェイにルーティングします。\\n\\n\\nTelemetryChannel> EndpointAddress>your gateway endpointEndpointAddress> TelemetryChannel>\\n\\n\\nゲートウェイにより、トラフィックが [https://dc.services.visualstudio.com:443/v2/track](https://dc.services.visualstudio.com/v2/track) にルーティングされます\\n",
+            "category": "AppInsights",
+            "id": "b9b5957e-5801-4625-b0f6-b19d82beee6e",
+            "question": "イントラネット Web サーバーを監視できますか?"
+        },
+        {
+            "answer": "Microsoft の [Web テスト](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-monitor-web-app-availability.md)は、世界中に分布する Points of Presence で実行されます。 以下に示す 2 つのソリューションがあります。\\n\\n*   ファイアウォール ドア - [頻繁に変更される多数の Web テスト エージェント](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/application-insights/app-insights-ip-addresses.md)からのサーバーへの要求を許可します。\\n*   イントラネット内部からサーバーに定期的な要求を送信する独自のコードを記述します。 Visual Studio Web テストを実行して、このコードをテストすることができます。 テストの結果は TrackAvailability() API を使用して Application Insights に送信できます。",
+            "category": "AppInsights",
+            "id": "3c1dceeb-eba2-4f3a-a099-d1fc3ff29e52",
+            "question": "イントラネット サーバーで可用性 Web テストを実行できますか?"
+        },
+        {
+            "answer": "AMS API に接続する方法については、「[Azure AD 認証を使用した Azure Media Services API へのアクセス](media-services-use-aad-auth-to-access-ams-api.md)」を参照してください。 に正常に接続されると、 https://media.windows.net 別の Media Services の URI を指定する 301 リダイレクトを受け取ります。 その新しい URI に再度コールする必要があります。",
+            "category": "MediaServices",
+            "id": "a49bdfc5-a327-45ec-ae8a-f5e56790d61e",
+            "question": "REST を使用して接続する方法を教えてください。"
+        },
+        {
+            "answer": "予約ユニットは、エンコード タスクでもインデックス作成タスクでも同じです。 [エンコード予約ユニットの規模の設定方法](media-services-scale-media-processing-overview.md)に関するページの手順に従ってください。 **注:** Indexer のパフォーマンスは、予約ユニットの種類には左右されません。",
+            "category": "MediaServices",
+            "id": "af8c9cba-4d38-4b49-9b5f-cd93e8beab9a",
+            "question": "インデックス作成の規模はどのように設定できますか?"
+        },
+        {
+            "answer": "可能性が高い原因は、再生しようとしているストリーミング エンドポイントが**実行中**状態になっていないことです。",
+            "category": "MediaServices",
+            "id": "f0b85e8a-564b-4848-97b8-c3fca8ad7a15",
+            "question": "ビデオをアップロード、エンコード、公開しました。 ビデオをストリームしようとしても再生できない場合、どんな原因が考えられますか。"
+        },
+        {
+            "answer": "現時点では、Azure Media Services でのライブ ストリームの合成はできないため、コンピューター上で事前に作成する必要があります。",
+            "category": "MediaServices",
+            "id": "3a7970ef-1a40-4a6e-86a8-ba21ed4c0e41",
+            "question": "ライブ ストリームで合成はできますか。"
+        },
+        {
+            "answer": "Media Services では Azure CDN との統合をサポートしています (詳細については、「 [Media Services アカウントでストリーミング エンドポイントを管理する方法](media-services-portal-manage-streaming-endpoints.md)」をご覧ください)。  CDN でライブ ストリーミングを使用できます。 Azure Media Services は、スムーズ ストリーミング、HLS、MPEG-DASH の出力を提供します。 これらのすべての形式では、データの転送に HTTP を使用し、HTTP キャッシュを活用します。 ライブ ストリーミングでは実際のビデオ/オーディオ データがフラグメントに分割され、この個別のフラグメントが CDN にキャッシュされます。 更新する必要があるデータは、マニフェスト データのみです。 CDN はマニフェスト データを定期的に更新します。",
+            "category": "MediaServices",
+            "id": "25f8b509-efc6-4b3e-9115-1591f7728188",
+            "question": "ライブ ストリーミングを Azure CDN で使用できますか。"
+        },
+        {
+            "answer": "[メディア エンコーダー スタンダード](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/media-services/media-services-dotnet-encode-with-media-encoder-standard.md) は、90/180/270 の角度によるローテーションをサポートしています。 既定の動作 \"自動\" により、受信 MP4/MOV ファイルのローテーション メタデータの検出、およびこの補正が試行されます。 ここ で定義されたいずれかの JSON プリセットに対する次の [ソース](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/media-services/media-services-mes-presets-overview.md)要素を含めます。\\n\\n`\"Version\": 1.0, \"Sources\": [ { \"Streams\": [], \"Filters\": { \"Rotation\": \"90\" } } ], \"Codecs\": [ ... `\\n\\n",
+            "category": "MediaServices",
+            "id": "d51e17f6-6e71-4908-9f73-fc4b23d00680",
+            "question": "エンコーディング プロセスでビデオをローテーションする方法を教えてください。"
+        },
+        {
+            "answer": "JPEG や PNG 画像を保存するだけの場合は、Azure Blob Storage を使用してください。 これらをビデオやオーディオ アセットに関連付けることがない限り、 Media Services アカウントに保存するメリットはありません。 または、ビデオ エンコーダーで画像をオーバーレイとして使用する必要がある場合、メディア エンコーダー スタンダードではビデオの上に画像をオーバーレイさせることができ、JPEG や PNG が入力形式としてサポートされています。 詳細については、「 [オーバーレイの作成](media-services-advanced-encoding-with-mes.md#overlay)」を参照してください。",
+            "category": "MediaServices",
+            "id": "e2eaabe9-69c0-44b0-9dba-4b12a6de3aaf",
+            "question": "Azure Media services では画像の保存はサポートされますか。"
+        },
+        {
+            "answer": "Media Services は、ストリーミング コンテンツ (たとえば、http://{AMSAccount}.origin.mediaservices.windows.net/{GUID}/{IAssetFile.Name}/streamingParameters) の URL を構築する際に、IAssetFile.Name プロパティの値を使用します。このため、パーセントエンコーディングは利用できません。 **Name** プロパティの値には、[パーセント エンコーディング予約文字](http://en.wikipedia.org/wiki/Percent-encoding#Percent-encoding_reserved_characters) (!*'();:@&=+$,/?%#[]\") は使用できません。 \".\" は 1 つのみです。 また、ファイル名拡張子で使用できる",
+            "category": "MediaServices",
+            "id": "57575430-ce16-4e39-954f-737b3b569597",
+            "question": "AMS を使用する場合、ファイルの名前にはどのような文字を使用できますか。"
+        },
+        {
+            "answer": "2017 年 6 月上旬より、Azure Security Center では、Microsoft Monitoring Agent を使用してデータの収集と格納を行っています。 詳細については、[Azure Security Center のプラットフォームの移行についての FAQ](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/security-center/security-center-platform-migration-faq.md) に関するページを参照してください。",
+            "category": "LogAnalytics",
+            "id": "91d84827-784f-4b5b-a6fc-7a0dbe72f4d0",
+            "question": "Log Analytics で使用されるエージェントは Azure Security Center のエージェントと同じですか?"
+        },
+        {
+            "answer": "\\n\\n 次のクエリは、現在実行されているすべてのチェックの説明を示します。\\n\\n`(Type=SQLAssessmentRecommendation OR Type=ADAssessmentRecommendation) | dedup RecommendationId | select FocusArea, ActionArea, Recommendation, Description | sort Type, FocusArea,ActionArea, Recommendation `\\n\\n結果を Excel にエクスポートしてレビューすることができます。\\n",
+            "category": "LogAnalytics",
+            "id": "bccc7b0f-dd48-402c-b47f-d8911a84d68b",
+            "question": "AD および SQL Assessment ソリューションでは、どのようなチェックが行われますか?"
+        },
+        {
+            "answer": "\\n\\n 使用している Operations Manager の更新プログラム ロールアップに応じて、System Center Advisor、Operational Insights、または Log Analytics のノードが表示される可能性があります。\\n\\n管理パックでは OMS のテキスト文字列が更新されており、手動でインポートする必要があります。 現在のテキストと機能を表示するには、最新の System Center Operations Manager 更新プログラム ロールアップ KB 記事の手順に従い、コンソールを更新してください。\\n",
+            "category": "LogAnalytics",
+            "id": "65b94baa-f55e-43fc-8ada-6e071c4282c1",
+            "question": "System Center Operations Manager コンソールに OMS とは異なる内容が表示されるのはなぜですか?"
+        },
+        {
+            "answer": "\\n\\n いいえ。 Log Analytics は、大量のデータを処理して格納します。 Log Analytics はクラウド サービスなので、必要に応じてスケールアップし、ユーザー環境のパフォーマンスに対する影響を防ぐことができます。\\n\\nその他の利点には次のものがあります。\\n\\n*   Microsoft は Log Analytics インフラストラクチャを実行するため、コストが節約される\\n*   機能更新および解決策の定期的なデプロイ。",
+            "category": "LogAnalytics",
+            "id": "d0daf39b-59e3-41c3-a586-4f092734d740",
+            "question": "オンプレミス バージョンの Log Analytics はありますか?"
+        },
+        {
+            "answer": "\\n\\n 無料の価格レベルを使用しており、1 日に 500 MB を超えるデータを送信した場合、その日の残りはデータ収集が停止します。 1 日の制限に達したことが、Log Analytics がデータの収集を停止したり、データがないように見えたりする一般的な原因です。\\n\\nデータ収集が開始および停止するとき、Log Analytics は型 Operation のイベントを作成します。\\n\\n1 日の制限に達し、データがなくなっているかどうかを確認するには、検索で `Type=Operation OperationCategory=\"Data Collection Status\"` のクエリを実行します。\\n\\nデータ収集が停止するとき、OperationStatus は [警告] です。 データ収集が開始するとき、OperationStatus は [成功] です。\\n\\n次の表は、データ収集が停止する原因と、データ収集を再開するための推奨されるアクションを示しています。\\nデータ収集が停止する原因データ収集を再開するには無料のデータの 1 日の制限に達した1収集が自動的に再開される次の日まで待つか、または 有料の価格レベルに変更する次のために、Azure サブスクリプションが中断された状態にある  無料試用版が終了した  Azure パスの期限が切れた  1 月の使用制限に達した (たとえば、MSDN または Visual Studio サブスクリプションで)有料のサブスクリプションに変換する  有料のサブスクリプションに変換する  制限を削除するか、または制限がリセットされるまで待つ\\n\\n1 ワークスペースで無料の価格レベルを使用している場合、サービスへの 1 日あたりのデータ送信は 500 MB に制限されます。 1 日の制限に達した場合、データ収集は翌日まで停止します。 データ収集が停止されている間に送信されたデータはインデックスが作成されず、検索には使用できません。 データ収集が再開されたとき、処理は送信された新しいデータに対してのみ実行されます。\\n\\nLog Analytics は UTC 時間を使用し、各日は UTC 午前 0 時に開始されます。 ワークスペースが 1 日の制限に達した場合、処理は次の UTC 日の最初の 1 時間の間に再開されます。\\n",
+            "category": "LogAnalytics",
+            "id": "82d5d39e-b4d1-42ac-9bd0-2679b2e4b190",
+            "question": "Log Analytics がデータを収集しなくなった問題をトラブルシューティングするにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n データ収集が停止したときに通知を受けるには、「[アラート ルールを作成する](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-alerts-creating.md#create-an-alert-rule)」で説明されている手順を使用します。\\n\\nデータ収集が停止したときのアラートを作成する場合は、次のように設定します。\\n\\n*   [名前] を [Data collection stopped] (データ収集が停止した) に\\n*   [重大度] を [警告] に\\n*   [検索クエリ] を `Type=Operation OperationCategory=\"Data Collection Status\" OperationStatus=Warning` に\\n*   [時間枠] を [2 時間] に。\\n*   使用状況データは 1 時間に 1 回しか更新されないため、[アラートの頻度] を 1 時間に。\\n*   [Generate alert based on] (アラートを生成する基準) を [結果の数] に\\n*   [結果の数] を [Greater than 0] (0 を超える) に\\n\\n「[add actions to alert rules (アラート ルールにアクションを追加する)](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-alerts-actions.md)」で説明されている手順を使用して、アラート ルールの電子メール、Webhook、または Runbook アクションを構成します。\\n\\n## 構成\\n\\n",
+            "category": "LogAnalytics",
+            "id": "f19c82e4-950e-4543-8f34-fb16e2a5bf07",
+            "question": "データ収集が停止したときに通知を受けるにはどうすればよいですか?"
+        },
+        {
+            "answer": "いいえ。Azure ストレージ内の任意のテーブルまたはコンテナーから読み取ることは現在不可能です。",
+            "category": "LogAnalytics",
+            "id": "c86176a0-e037-4749-b5d1-ab93aebd611c",
+            "question": "Azure 診断 (WAD) からの読み取りに使用されるテーブル/BLOB コンテナーの名前は変更できますか?"
+        },
+        {
+            "answer": "\\n\\n Log Analytics サービスは、Azure に基づいて構築されています。 Log Analytics の IP アドレスは、[Microsoft Azure データセンターの IP 範囲](http://www.microsoft.com/download/details.aspx?id=41653)内にあります。\\n\\nサービスのデプロイが行われると、Log Analytics サービスの実際の IP アドレスは変更されます。 ファイアウォールを通過できる DNS 名については、「 [Log Analytics のプロキシ設定とファイアウォール設定の構成](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-proxy-firewall.md)」を参照してください。\\n",
+            "category": "LogAnalytics",
+            "id": "adefdbc6-d5e9-48e9-afa9-4d024257aff0",
+            "question": "Log Analytics サービスはどのような IP アドレスを使用しますか? ファイアウォールが確実に Log Analytics サービスへのトラフィックのみを許可するようにするにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n 各種の ExpressRoute トラフィックについては、[ExpressRoute のドキュメント](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/expressroute/expressroute-faqs.md#supported-services)を参照してください。\\n\\nLog Analytics へのトラフィックには、パブリックピアリング ExpressRoute 回路が使用されます。\\n",
+            "category": "LogAnalytics",
+            "id": "2c1c8129-6100-4114-810d-c60bb4d53a07",
+            "question": "Azure への接続に ExpressRoute を使用しています。 Log Analytics トラフィックは、この ExpressRoute 接続を使用しますか?"
+        },
+        {
+            "answer": "\\n\\n `Move-AzureRmResource` コマンドレットを使用すると、Log Analytics ワークスペースを移動できるほか、Automation アカウントを Azure サブスクリプション間で移動することもできます。 詳細については、「[Move-AzureRmResource](http://msdn.microsoft.com/library/mt652516.aspx)」を参照してください。\\n\\nこの変更は、Azure Portal で行うこともできます。\\n\\nある Log Analytics ワークスペースから別のワークスペースにデータを移行したり、Log Analytics データが格納されているリージョンを変更したりすることはできません。\\n",
+            "category": "LogAnalytics",
+            "id": "f7cba66d-934b-4562-a7f2-51a7a53c0be8",
+            "question": "既存の Log Analytics ワークスペースを別の Log Analytics ワークスペース/Azure サブスクリプションに移動するためのシンプルで簡単な方法はありますか?"
+        },
+        {
+            "answer": "\\n\\n 最新の更新プログラム ロールアップに更新し、管理パックをインポートすると、Operations Manager を Log Analytics に接続できます。\\n\\n> [!NOTE] Log Analytics への Operations Manager 接続は、System Center Operations Manager 2012 SP1 以降でのみ使用できます。\\n\\n",
+            "category": "LogAnalytics",
+            "id": "00665c51-bf5a-4dce-91fc-ed1b98d5bdfb",
+            "question": "System Center Operations Manager に Log Analytics を追加するにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n エージェントが OMS と通信できることを確認するには、[コントロール パネル]、[システムとセキュリティ]、[Microsoft Monitoring Agent] の順に選択します。\\n\\n[Azure Log Analytics (OMS)] タブの緑色のチェック マークを確認します。 緑色のチェック マーク アイコンは、エージェントが OMS サービスと通信できることを示します。\\n\\n黄色の警告アイコンは、エージェントと OMS の通信に問題が発生していることを示します。 1 つの一般的な原因は、Microsoft Monitoring Agent サービスが停止したことです。 サービス コントロール マネージャーを使用してサービスを再開します。\\n",
+            "category": "LogAnalytics",
+            "id": "5764ffe2-64a2-42ac-8c0e-2be4b0e8302e",
+            "question": "エージェントが Log Analytics と通信できることを確認するにはどうすればよいですか?"
+        },
+        {
+            "answer": "System Center Operations Manager では、Advisor で管理されたコンピューターの一覧からコンピューターを削除します。 Operations Manager はエージェントの構成を更新して、Log Analytics に報告しなくなるようにします。 Log Analytics に直接接続されているエージェントの場合は、[コントロール パネル]、[システムとセキュリティ]、[Microsoft Monitoring Agent] の順に選択して、エージェントの通信を停止できます。 **[Azure Log Analytics (OMS)]**に表示されているすべてのワークスペースを削除します。",
+            "category": "LogAnalytics",
+            "id": "2ad156b6-cd87-4776-832e-eda3c05aa30e",
+            "question": "エージェントの Log Analytics との通信を停止するにはどうすればよいですか?"
+        },
+        {
+            "answer": "\\n\\n Azure Portal を使用している場合は、移動用にワークスペースのみが選択されていることを確認してください。 ソリューションを選択しないでください。これらは、ワークスペースが移動された後に自動的に移動されます。\\n\\n両方の Azure サブスクリプションにアクセス許可があることを確認してください。\\n\\n## エージェント データ\\n\\n",
+            "category": "LogAnalytics",
+            "id": "b52ffdc4-6801-4657-8060-2fae1348fc03",
+            "question": "ワークスペースを Azure サブスクリプション間で移動しようとするとエラーが表示されるのはなぜですか?"
+        },
+        {
+            "answer": "\\n\\n 無料プランには、1 つのワークスペースにつき 1 日 500 MB という上限があります。 Standard プランと Premium プランの場合、アップロードされるデータ量に上限はありません。 Log Analytics はクラウド サービスとして、顧客から送信される量が 1 日あたり数 TB であったとしても、それを処理するように自動的にスケールアップするように設計されています。\\n\\nLog Analytics エージェントは、小さなフットプリントを保証するように設計されました。 エージェントに対して実行したテストとその感想についてブログに書かれているお客様もいらっしゃいます。 データ量は、有効にしているソリューションによって異なります。 [[使用状況]](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-usage.md) ページで、データ量に関する詳細情報を見つけ、ソリューションごとの明細を表示できます。\\n\\nOMS エージェントの低フットプリントの詳細については、 [お客様のブログ](http://thoughtsonopsmgr.blogspot.com/2015/09/one-small-footprint-for-server-one.html) を参照してください。\\n",
+            "category": "LogAnalytics",
+            "id": "150a57d5-e24b-48d3-a317-a14db84210cc",
+            "question": "エージェント経由で Log Analytics に送信できるデータ量はどのくらいですか? 顧客ごとの最大データ量はありますか?"
+        },
+        {
+            "answer": "帯域幅は、送信されるデータ量に関する機能です。 データは、ネットワーク経由で送信されるときに圧縮されます。",
+            "category": "LogAnalytics",
+            "id": "f2a04cfe-eb14-42cf-bebf-651b096b9a54",
+            "question": "データを Log Analytics に送信するときに、どれくらいのネットワーク帯域幅が Microsoft Management Agent (MMA) によって使用されますか?"
+        },
+        {
+            "answer": "\\n\\n エージェントごとに送信されるデータ量は、次のものによって異なります。\\n\\n*   有効にしているソリューション\\n*   収集されているログとパフォーマンス カウンターの数\\n*   ログ内のデータ量\\n\\nいくつかのサーバーをデプロイし、一般的なデータ量を計測する場合は、無料価格レベルがお勧めします。 全体的な使用状況は [[使用状況]](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-usage.md) ページに表示されます。\\n\\nWireData エージェントを実行できるコンピューターの場合、どれくらいのデータが送信されているかを確認するには次のクエリを使用します。\\n\\n`Type=WireData (ProcessName=\"C:\\\\Program Files\\\\Microsoft Monitoring Agent\\\\Agent\\\\MonitoringHost.exe\") (Direction=Outbound) | measure Sum(TotalBytes) by Computer `\\n\\n## 次のステップ\\n\\n*   [Log Analytics の起動と開始](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/log-analytics/log-analytics-get-started.md) 」では、Log Analytics の詳細と、分単位で起動および実行する方法について説明します。",
+            "category": "LogAnalytics",
+            "id": "7cba4604-76df-4e11-bc76-4a2109f9d3e1",
+            "question": "エージェントごとにどれくらいのデータが送信されますか?"
+        },
+        {
+            "answer": "Azure Search は、複数のデータ ソース、[多数の言語の言語分析](https://docs.microsoft.com/rest/api/searchservice/language-support)、[興味深く普通とは異なるデータ入力のカスタム分析](https://docs.microsoft.com/rest/api/searchservice/custom-analyzers-in-azure-search)、[スコアリング プロファイル](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index)による検索ランク制御、ユーザーエクスペリエンス機能 (先行入力、検索結果の強調表示、ファセット ナビゲーションなど) をサポートしています。 また、シノニム、高度なクエリ構文などの機能も含まれていますが、一般的に特別な機能ではありません。",
+            "category": "AzureSearch",
+            "id": "e8cd996b-4343-46a5-ac04-1ea86bd48055",
+            "question": "Azure Search と DBMS の全文検索の違いは何ですか?"
+        },
+        {
+            "answer": "検索テクノロジと比較するときに、Azure Search と Elasticsearch の比較についてお客様からよく質問をいただきます。 検索アプリケーション プロジェクトに Elasticsearch ではなく Azure Search を選択したお客様は、一般的に、Azure Search では主要なタスクが簡単なことや、他の Microsoft テクノロジとの統合が組み込まれている必要があることを理由にしています。\\n  \\n\\n\\n+ Azure Search は、十分な冗長性 (読み取りアクセス用に 2 レプリカ、読み取り/書き込み用に 3 レプリカ) でプロビジョニングすると、サービス レベル アグリーメント (SLA) が 99.9% の完全に管理されているクラウド サービスです。\\n\\n+ Microsoft の[自然言語プロセッサ](https://docs.microsoft.com/rest/api/searchservice/language-support)は、最先端の言語分析を提供しています。  \\n\\n+ [Azure Search インデクサー](search-indexer-overview.md)は、初回および増分のインデックス作成に合わせて多様な Azure データ ソースをクロールできます。\\n\\n+ クエリまたはインデックス作成ボリュームの変動にすばやく反応する必要がある場合、Azure Portal の[スライダー コントロール](search-manage.md#scale-up-or-down)を使用するか [PowerShell スクリプト](search-manage-powershell.md)を実行して、シャード管理を直接パイパスすることができます。  \\n\\n+ [スコア付け機能と調整機能](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index)を使用すると、検索エンジンのみで提供される結果を超える影響を検索順位スコアに与えることができます。",
+            "category": "AzureSearch",
+            "id": "e3f93dfd-1bbc-4f1d-8d7a-601290233f18",
+            "question": "Azure Search と Elasticsearch の違いは何ですか?"
+        },
+        {
+            "answer": "サービスを一時停止することはできません。 サービスの作成時に、お客様専用の計算およびストレージ リソースが割り当てられます。 そのリソースを必要に応じて解放し、再請求することはできません。",
+            "category": "AzureSearch",
+            "id": "9771b276-5d67-4857-a75c-ea0798d75b9d",
+            "question": "Azure Search サービスを一時停止し、課金を停止することはできますか?"
+        },
+        {
+            "answer": "[インデックス定義はいつでも取得できます](https://docs.microsoft.com/rest/api/searchservice/get-index)が、クラウドで実行されている*設定済み*インデックスのローカル システムにダウンロードするため、または別の Azure Search サービスに移行するためのインデックスの抽出、スナップショット、またはバックアップ/復元機能はありません。 \\n  \\n\\n\\nインデックスは、作成したコードから構築および設定され、クラウド内の Azure Search でのみ実行されます。 通常、インデックスを別のサービスに移行するには、新しいエンドポイントを使用するようにコードを編集してから、インデックス作成を再実行します。 インデックスのスナップショットまたはバックアップを作成する機能が必要な場合は、[ユーザーの声](https://feedback.azure.com/forums/263029-azure-search/suggestions/8021610-backup-snapshot-of-index)で投票してください。",
+            "category": "AzureSearch",
+            "id": "6a7d25d0-f946-411a-97d0-398a18e8ec46",
+            "question": "インデックスまたはインデックスのスナップショットのバックアップと復元 (またはダウンロードと移動) はできますか?"
+        },
+        {
+            "answer": "最初からインデックスを構築するときに、データ ソースとしてのプライマリまたはセカンダリ レプリカの使用に制限はありません。 ただし、(レコードの変更に基づく) 増分更新によるインデックスの更新には、プライマリ レプリカが必要です。 この要件は SQL Database に由来するものです。SQL Database は変更追跡をプライマリ レプリカでのみ保証しています。 インデックス更新ワークロードにセカンダリ レプリカを使用しても、すべてのデータを取得する保証はありません。",
+            "category": "AzureSearch",
+            "id": "329180be-25f6-461a-ba1b-b15592729fe5",
+            "question": "SQL データベース レプリカからインデックスを作成することはできますか (対象: Azure SQL Database インデクサー )"
+        },
+        {
+            "answer": "いいえ。この操作はサポートされていません。 検索は常に単一のインデックスが対象です。",
+            "category": "AzureSearch",
+            "id": "b2c68b18-300d-47bf-9069-4da4cdb00889",
+            "question": "複数のインデックスを対象に検索できますか?"
+        },
+        {
+            "answer": "Azure Search には、ユーザー データ アクセス別のロールベースのセキュリティ モデルはありません。 認証は、サービス レベルの完全な権限または読み取り専用権限です。 一部のユーザーは、[`$filter` 検索パラメーター](https://docs.microsoft.com/rest/api/searchservice/search-documents)に基づいてソリューションを実装していますが、これはあくまでも回避策です。 この機能が必要な場合は、[ユーザーの声](https://feedback.azure.com/forums/263029-azure-search/category/86074-security)で投票してください。",
+            "category": "AzureSearch",
+            "id": "8d683a19-2949-423e-b9a5-9744074ebdc1",
+            "question": "ユーザー ID で検索コーパス アクセスを制限できますか?"
+        },
+        {
+            "answer": "\\n\\nよくある例は、クエリの種類ごとにサポートされる検索動作と言語分析のレベルが異なることを把握していない場合です。 主要なワークロードである全文検索には、用語を原形に分解する言語分析フェーズが含まれています。 トークン化された用語は、より多くの数の変形と一致するため、このようなクエリ分析はより広い網を一致候補にかけます。\\n\\n[他のクエリの種類](https://docs.microsoft.com/rest/api/searchservice/lucene-query-syntax-in-azure-search) (ワイルドカード検索、あいまい検索、近接検索、検索候補など) を呼び出す場合、言語分析はありません。 用語はそのままクエリ ツリーに追加されます。",
+            "category": "AzureSearch",
+            "id": "3da4cc3c-66d4-4ba0-96f8-8b93e740ef13",
+            "question": "存在するとわかっている用語でも一致数が 0 件なのはなぜですか?"
+        },
+        {
+            "answer": "既定で、検索結果は、たとえば、ワイルドカード検索に「tour*」と入力すると、\"tours\"、\"tourettes\"、\"tourmaline\" との一致が生成されます。 こうした結果の性質上、語句の相対的な重みを適切に推測することができません。 そのため、ワイルドカード検索、プレフィックス検索、正規表現検索では、結果のスコア付けを行う際に、語句の出現頻度が無視されます。 予期しない一致に対するバイアスを回避するために、部分的な入力に基づく検索結果には一定のスコアが与えられます。",
+            "category": "AzureSearch",
+            "id": "72a68a8e-8bc0-4d2f-a39d-13d2fd533e58",
+            "question": "毎回、検索順位が 1.0 の定数または同じスコアなのはなぜですか?"
+        },
+        {
+            "answer": "多くのお客様は、同じインデックスで複数のロケール (言語) をサポートすることになったときに、コレクションよりも専用フィールドを選択しています。 ロケール固有のフィールドがあると、適切なアナライザーを割り当てることができます。 たとえば、フランス語の文字列を含むフィールドに Microsoft French Analyzer を割り当てることができます。 また、フィルター処理も簡単になります。 フランス語のページに対してクエリが開始されたことがわかっている場合は、検索結果をこのフィールドに制限することができます。 また、[スコアリング プロファイル](https://docs.microsoft.com/rest/api/searchservice/add-scoring-profiles-to-a-search-index)を作成して、フィールドにより多くの相対的な重み付けを与えます。",
+            "category": "AzureSearch",
+            "id": "d4768327-1fb0-47a1-a3b0-6717d8ed4893",
+            "question": "ローカライズされた検索を実装するには、どのような方法が推奨されますか?"
+        },
+        {
+            "answer": "はい。Service Fabric コア クラスタリング テクノロジを使用すると、相互にネットワーク接続されているのであれば、世界中で実行されているコンピューターを組み合わせることができます。 ただし、そのようなクラスターの構築と実行は複雑になる可能性があります。このシナリオに関心がある場合は、[Service Fabric Github 問題一覧](https://github.com/azure/service-fabric-issues)から、あるいはサポート窓口を通じて詳しいガイダンスを入手してください。 Service Fabric チームでは、このシナリオをさらに明確にし、ガイダンスや推奨事項を追加できるよう取り組んでいます。以下の点を考慮してください。\\n\\n1.  現在、Azure での Service Fabric クラスター リソースは、クラスターが構築される仮想マシン スケール セットと同じように、地域に限定されています。 つまり、地域的な障害が発生したとき、Azure Resource Manager または Azure Portal を使用してクラスターを管理できなくなることがあります。 クラスターが実行し続けていて、直接やり取りできる場合にも、そのような状況になることがあります。 また、現在の Azure では、地域にまたがって使用できる単独の仮想ネットワークは提供されていません。 つまり、Azure における複数リージョン クラスターは、[VM Scale Sets の各 VM のための Public IP Addresses](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-networking.md#public-ipv4-per-virtual-machine) か [Azure VPN Gateways](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/vpn-gateway/vpn-gateway-about-vpngateways.md) を必要とします。 これらのネットワーク オプションにより、コストやパフォーマンスがさまざまな影響を受けます。ある程度まではアプリケーション設計にも影響があります。このため、このような環境を立ち上げるには、事前に注意深い分析と計画が必要です。\\n\\n2.  特に、異なるクラウド プロバイダーやオンプレミス リソースと Azure など、複数の環境の_タイプ_が混在する場合、これらのマシンのメンテナンス、管理、監視は複雑になります。 そのような環境で実稼働ワークロードを実行する前には、クラスターとアプリケーションの両方のアップグレード、監視、管理、診断についてよく理解する必要があります。 Azure または自身のデータセンターでこのような問題を解決した経験が豊富にある場合は、Service Fabric クラスターを構築または実行する際にも同じソリューションを適用できると考えられます。",
+            "category": "ServiceFabric ",
+            "id": "c8f364b2-5670-4792-8e13-074192560e68",
+            "question": "複数の Azure リージョンまたは自らのデータセンターにまたがるクラスターを作成することはできますか?"
+        },
+        {
+            "answer": "現時点ではそうではありませんが、これも共通の要求であり、今後 Azure で提供する予定です。それまでの間は、Service Fabric ノードのオペレーティング システムにパッチを適用して最新状態にするための[アプリケーションを提供](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/service-fabric/service-fabric-patch-orchestration-application.md)しています。OS の更新に伴う課題は、それを行うには通常はコンピューターを再起動する必要があり、それによって可用性が一時的に失われることです。 Service Fabric では可用性が失われたサービスのトラフィックを他のノードに自動的にリダイレクトするため、再起動自体は問題ではありません。 ただし、OS の更新がクラスター全体で連係されていなかった場合、多数のノードが一度にダウンする可能性があります。 このような再起動の同時発生によって、サービスの可用性が完全に失われるか、少なくとも (ステートフル サービス用の) 特定のパーティションの可用性が失われる可能性があります。\\n\\n今後、更新ドメイン間で連係する完全に自動化された OS 更新ポリシーをサポートして、再起動やその他の予想外の障害が発生した場合でも可用性が維持されることを保証する予定です。",
+            "category": "ServiceFabric ",
+            "id": "47c59d2c-f1a1-4fe6-a925-895b33c746cd",
+            "question": "Service Fabric ノードでは、OS の更新は自動的に受信されますか?"
+        },
+        {
+            "answer": "簡単な回答 - いいえ。\\n\\n詳しい回答 - 大規模な仮想マシン スケール セットでは、最大 1000 台の VM インスタンスにスケーリングできますが、これは配置グループ (PG) を使用して実行されます。 障害ドメイン (FD) とアップグレード ドメイン (UD) は、Service Fabric が FD と UD を使用してサービス レプリカ/サービス インスタンスの配置を決定する配置グループ内でのみ整合性が維持されます。 FD 数と UD 数は配置グループ内でのみ比較可能であるため、SF で使用することはできません。 たとえば、PG1 の VM1 のトロポジが FD=0 であり、PG2 の VM9 のトポロジが FD=4 の場合、VM1 と VM2 が 2 つの異なるハードウェア ラック上にあることを意味するわけではないため、SF はこの例の FD 値を使用して配置を決定することはできません。\\n\\nレベル 4 の負荷分散をサポートしていないなど、現在、大規模な仮想マシン スケールセットに関する問題がほかにもあります。 詳細については、[大規模なスケール セット](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/virtual-machine-scale-sets/virtual-machine-scale-sets-placement-groups.md)に関する記事をご覧ください。",
+            "category": "ServiceFabric ",
+            "id": "9c75e32b-cba5-4432-980e-67ac502c71c9",
+            "question": "SF クラスターで大規模な仮想マシン スケール セットを使用できますか?"
+        },
+        {
+            "answer": "運用ワークロードを実行する Service Fabric クラスターでサポートされる最小サイズは、5 つのノードです。 開発/テスト シナリオでは、3 つのノードで構成されるクラスターがサポートされます。これらの最小要件が存在する理由は、Service Fabric クラスターでは、一連のステートフル システム サービス (ネーム サービスやフェールオーバー マネージャーなど) が実行されるためです。 クラスターにデプロイされているサービスと現在のホスト場所を追跡するこれらのサービスは、強い一貫性に依存しています。 この強い一貫性は、これらのサービスの状態に対する特定の更新の \"クォーラム\" を取得する能力に依存しています (クォーラムは特定のサービスに対するレプリカの strict majority (N/2 +1) を表します)。これを背景として、考えられるいくつかのクラスター構成を検討してみます。1 つのノード: 単一のノードが何らかの理由で失われることはクラスター全体が失われるためを意味するため、このオプションでは高可用性を提供できません。2 つのノード: 2 つのノード (N = 2) 間でデプロイされるサービスのクォーラムは 2 です (2/2 + 1 = 2)。 1 つのレプリカが失われると、クォーラムを作成できなくなります。 サービスのアップグレードを実行するには、レプリカを一時的に停止させる必要があるため、これは有用な構成ではありません。3 つのノード: 3 つのノード (N = 3) でも、クォーラムを作成するためのノードの要件は 2 つのままです (3/2 + 1 = 2)。 これは、個々のノードが失われた場合でも、クォーラムを保持できることを意味します。3 つのノードのクラスター構成は、開発/テストでサポートされます。その理由は、アップグレードや個々のノードの障害が同時に発生しない限り、アップグレードを安全に実行でき、個々のノードの障害にも対応できるためです。 運用ワークロードでは、このような同時障害から回復する必要があるため、5 つのノードが必要です。",
+            "category": "ServiceFabric ",
+            "id": "9b2eef2f-b6fb-4f7d-bf9c-fbd96af944bd",
+            "question": "Service Fabric クラスターの最小サイズとは何ですか? もっと小さくできないのはなぜですか?"
+        },
+        {
+            "answer": "通常はできません。 Service Fabric は、一時的なローカル ディスクに状態を格納します。これは、仮想マシンが別のホストに移動されても、データは一緒に移動されないことを意味します。 通常の運用では、新しいノードは他のノードによって最新の状態になるため、これは問題にはなりません。 ただし、すべてのノードを停止し、後で再起動した場合は、ほとんどのノードが新しいホスト上で開始され、システムが回復できない状態になる可能性が非常に高くなります。アプリケーションをデプロイする前にテスト用のクラスターを作成する場合は、[継続的インテグレーション/継続的配置パイプライン](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/service-fabric/service-fabric-set-up-continuous-integration.md)の一部としてこれらのクラスターを作成することをお勧めします。",
+            "category": "ServiceFabric ",
+            "id": "353013ff-d651-42bd-9964-2e00aa494cf9",
+            "question": "コストを節約するために夜間/週末にクラスターをオフにすることはできますか?"
+        },
+        {
+            "answer": "Microsoft はエクスペリエンスの改善に取り組んでいますが、現時点ではお客様の責任でアップグレードを行っていただく必要があります。 クラスターの仮想マシンで OS イメージをアップグレードする場合は、一度に 1 つの VM で行う必要があります。",
+            "category": "ServiceFabric ",
+            "id": "646eb833-380b-4ca2-99c5-49656659737c",
+            "question": "オペレーティング システムはどのようにアップグレードすればいいですか? (Windows Server 2012 を 2016 にする場合など)"
+        },
+        {
+            "answer": "この問題は、5.6.204.9494 バージョンのクラスターで報告されています。\\n\\n対応策: [このドキュメント](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/service-fabric/service-fabric-dnsservice.md)に従って、クラスター内の DNS サービス ファブリック サービスを有効にします。\\n\\n修正: 5.6.204.9494 より高いサポートされているクラスター バージョンが使用可能な場合は、そのバージョンにアップグレードします。 クラスターが自動アップグレードに設定されている場合、クラスターは、この問題が解決されているバージョンに自動的にアップグレードされます。",
+            "category": "ServiceFabric ",
+            "id": "a9321da3-35e1-4e97-b1b8-211747906e66",
+            "question": "SF にデプロイされたコンテナーが DNS アドレスを解決できないのはなぜですか?"
+        },
+        {
+            "answer": "Reliable collection は、通常は、パフォーマンスとスループットを高めるためのスケールアウトを実行できるように[パーティション分割](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/service-fabric/service-fabric-concepts-partitioning.md)されます。 これは、特定のサービスの状態が、数十から数百台のコンピューターに分散されることを意味します。 このデータ セット全体に対して操作を実行するには、いくつかのオプションがあります。\\n\\n*   別のサービスのすべてのパーティションを照会して必要なデータを引き出すサービスを作成します。\\n\\n*   別のサービスのすべてのパーティションからデータを受信できるサービスを作成します。\\n\\n*   各サービスから外部ストアにデータを定期的にプッシュします。 この方法は、実行する照会が中核となるビジネス ロジックの一部ではない場合のみに適しています。",
+            "category": "ServiceFabric ",
+            "id": "a5f64bed-9d5a-4f8f-b92e-0437ccc5f5e5",
+            "question": "Reliable Collection のパーティション全体のデータを照会する最善の方法は何ですか?"
+        },
+        {
+            "answer": "アクターは、状態とコンピューティングに依存しないように設計されているため、実行時にアクターの状態を広範に照会することは推奨されていません。 アクターの状態のフル セットを照会する必要がある場合は、次のいずれかを検討してください。\\n\\n*   アクター サービスをステートフルな信頼できるサービスに置き換えて、すべてのアクターからすべてのデータを収集するネットワーク要求の数がサービス内のパーティションの数と同じになるようにします。\\n\\n*   状態を外部ストアに定期的にプッシュして簡単に照会できるようにアクターを設計します。 上記と同じように、この方法は、実行する照会が実行時の動作で必須でない場合のみに実行可能です。",
+            "category": "ServiceFabric ",
+            "id": "3716bef8-c8d7-497d-8cea-be235f6c416f",
+            "question": "アクター全体のデータを照会する最善の方法は何ですか。"
+        },
+        {
+            "answer": "Reliable Services は通常はパーティション分割されるため、格納できる量は、クラスター内のコンピューターの台数とこれらのコンピューターで使用できるメモリの量によってのみ制限されます。\\n  \\n\\n\\nたとえば、サービスに 100 個のパーティションと 3 つのレプリカがある Reliable Collection があり、平均サイズが 1 KB のオブジェクトを格納するとします。 ここで、クラスターが 10 台のコンピューターで構成され、各コンピューターのメモリが 16 GB であるとします。 単純かつ控えめに見積もるために、オペレーティング システム、システム サービス、Service Fabric ランタイム、および使用するサービスで 6 GB が消費され、各コンピューターで残りの 10 GB 、つまりクラスターで 100 GB を使用できるものと想定します。\\n  \\n\\n\\n各オブジェクトは 3 回格納される必要があること (1 回はプライマリに、2 回はレプリカに) に留意すると、容量全部を使用して運用した場合は、約 3,500 万個のオブジェクトをコレクションに格納するのに十分なメモリがあります。 ただし、障害ドメインとアップグレード ドメインが同時に失われた場合の回復力を備えておくことが推奨されます。これは容量の約 1/3 に当たるため、この数値は約 2,300 万個に減少します。\\n  \\n\\n\\nこの計算では、以下も想定されていることに注意してください。\\n  \\n\\n\\n- パーティション間のデータの分散はほぼ一定であるか、クラスター リソース マネージャーに負荷メトリックを報告すること。 既定では、Service Fabric は、レプリカの数に基づいて負荷を分散します。 上の例では、クラスター内の各ノードに 10 個のプライマリ レプリカと 20 個のセカンダリ レプリが配置されます。 パーティション間で負荷が均等に分散される場合は問題はありません。 負荷が均等でない場合は、負荷をレポートして、小さなレプリカがリソース マネージャーによって 1 つにまとめられ、大きなレプリカが個々のノードでより多くのメモリを消費できるようにする必要があります。\\n  \\n\\n\\n- 問題の Reliable Service が、クラスターで格納状態にある唯一のサービスであること。 複数のサービスをクラスターにデプロイできるため、実行する必要があるリソースとその状態の管理を意識する必要があります。\\n  \\n\\n\\n- クラスター自体が拡大も縮小もしないこと。 コンピューターが追加された場合、Service Fabric は、追加された容量を活用するためにレプリカの再分散を実行します。個々のレプリカは複数のコンピューターにまたがることはできないため、この動作はコンピューターの数がサービス内のパーティションの数を上回るまで続けられます。 逆に、コンピューターを削除することでクラスターのサイズが減少した場合、レプリカはより緊密にパックされ、全体の容量が小さくなります。",
+            "category": "ServiceFabric ",
+            "id": "8cef5c3d-b89c-4ec3-8076-e6c95d6cbb70",
+            "question": "Reliable Collection には、どのくらいの量のデータを格納できますか?"
+        },
+        {
+            "answer": "Reliable Services と同じように、アクター サービスに格納できるデータの量は、ディスク領域の合計とクラスター内のノードで使用できるメモリによってのみ制限されます。 ただし、個々のアクターは、小さな分量の状態とそれに関連付けられたビジネス ロジックをカプセル化するために使用すると、最も効果があります。 原則として、個々のアクターには、キロバイト単位で測定される状態を格納してください。  \\n",
+            "category": "ServiceFabric ",
+            "id": "a5bd9a85-2776-4284-9401-8ce4e7f7ea4e",
+            "question": "アクターには、どのくらいの量のデータを格納できますか?"
+        },
+        {
+            "answer": "コンテナーは、サービスとそれに依存するものをパケージ化して、それらがすべての環境で一貫性をもって実行され、1 台のコンピューター上で隔離された方法で運用できるようにします。 Service Fabric には、[コンテナーにパッケージ化されたサービス](https://github.com/MicrosoftDocs/azure-docs.ja-jp/blob/live/articles/service-fabric/service-fabric-containers-overview.md)も含めて、サービスをデプロイして管理する方法が用意されています。",
+            "category": "ServiceFabric ",
+            "id": "fcda9aac-cb7f-46d4-a6c3-09df0abfb168",
+            "question": "Service Fabric はコンテナーとどのように関連していますか?"
+        },
+        {
+            "answer": "Reliable Services および Reliable Actors フレームワークを GitHub でオープン ソース化する予定であり、このプロジェクトにはコミュニティの皆さんにも参加していただきます。 詳しくは、[Service Fabric ブログ](https://blogs.msdn.microsoft.com/azureservicefabric/)での発表をご覧ください。現在、Service Fabric ランタイムをオープン ソース化する計画はありません。",
+            "category": "ServiceFabric ",
+            "id": "f7246bc2-65dd-4dc3-8db2-6c1bb5599fb6",
+            "question": "Service Fabric をオープン ソース化する予定はありますか?"
+        },
+        {
+            "answer": "オープンソースの DC/OS、Docker Swarm、および Kubernetes がサポートされています。",
+            "category": "AzureContainerServices",
+            "id": "c797d417-78a0-4e08-bec8-d727f7553472",
+            "question": "Azure Container Service では、どのコンテナー オーケストレーターがサポートされていますか。"
+        },
+        {
+            "answer": "現時点では Swarm モードはサポートされていませんが、サービス ロードマップの一部として予定されています。",
+            "category": "AzureContainerServices",
+            "id": "127e640e-6386-4281-bf4c-4aeda4ca64b1",
+            "question": "Docker Swarm モードはサポートされていますか。"
+        },
+        {
+            "answer": "現在、すべてのオーケストレーターでサポートされているのは、Linux コンテナーのみです。 Kubernetes での Windows コンテナーのサポートはプレビュー段階です。",
+            "category": "AzureContainerServices",
+            "id": "2d7b6a62-70b9-44c1-bfe0-92bc805a65fd",
+            "question": "Azure Container Service では Windows コンテナーはサポートされていますか。"
+        },
+        {
+            "answer": "基本的には、推奨される特定のオーケストレーターはありません。 サポートされているオーケストレーターのいずれかを使用した経験をお持ちの場合は、その経験を Azure Container Service でも活かすことができます。 ただし、データのトレンドから判断すると、ビッグ データや IoT のワークロードについては DC/OS に運用環境での実績があり、クラウド ネイティブのワークロードには Kubernetes が適しているようです。また、Docker Swarm は Docker ツールとの統合や習得の容易さに定評があります。",
+            "category": "AzureContainerServices",
+            "id": "9ecad0e2-2d10-4bc7-8870-909ef4b1f7aa",
+            "question": "Azure Container Service では、特定のオーケストレーターが推奨されますか。"
+        },
+        {
+            "answer": "Azure Container Service は SLA による保証が付いた Azure サービスで、Azure Portal の各種機能、Azure コマンドライン ツール、Azure API が付属しています。 Azure Container Service を使用すると、比較的少ない選択肢を選んで構成するだけで、標準のコンテナー オーケストレーション ツールを実行するクラスターを簡単に実装して管理できます。 \\n[ACS Engine](http://github.com/Azure/acs-engine) はオープンソース プロジェクトで、パワー ユーザーがクラスター構成を各レベルでカスタマイズするのに適しています。 インフラとソフトウェアの両方の構成に変更を加えることができるため、ACS Engine には SLA が用意されていません。 サポートは、Microsoft の公式チャネルではなく、GitHub のオープンソース プロジェクトを通じて提供されます。   \\n",
+            "category": "AzureContainerServices",
+            "id": "c740eeab-a27b-4406-a07a-93c673cbbd12",
+            "question": "Azure Container Service と ACS Engine の違いは何ですか。"
+        },
+        {
+            "answer": "クラスターの Linux 仮想マシンへの認証に使用する SSH RSA 公開キーと秘密キーのペアは、オペレーティング システムに搭載された標準のツールを使用して作成できます。\\n\\nAzure CLI 2.0 のコマンドを使用してコンテナー サービス クラスターをデプロイする場合は、クラスター用の SSH キーを自動的に生成することができます。",
+            "category": "AzureContainerServices",
+            "id": "b49ed014-55ee-457f-8059-89d56813df88",
+            "question": "クラスターの SSH キーはどのようにして作成するのですか。"
+        },
+        {
+            "answer": "Azure Active Directory サービス プリンシパルの ID とパスワードが、Azure Container Service で Kubernetes クラスターを作成する際にも必要です。 \\n\\nAzure CLI 2.0 のコマンドを使用して Kubernetes クラスターをデプロイする場合は、クラスターのサービス プリンシパルの資格情報を自動的に生成することができます。",
+            "category": "AzureContainerServices",
+            "id": "870013df-eaea-4c88-8ebf-be6c8fd376b4",
+            "question": "Kubernetes クラスターのサービス プリンシパルはどのようにして作成するのですか。"
+        },
+        {
+            "answer": "1、3、または 5 個のマスター ノードを含むクラスターを作成できます。 エージェント ノードは、最大 100 個選択できます。",
+            "category": "AzureContainerServices",
+            "id": "757c7fc4-4f33-45f2-9e5f-f816db87ca52",
+            "question": "作成できるクラスターの大きさはどの程度ですか。"
+        },
+        {
+            "answer": "クラスターを作成すると、マスターの数は固定され、変更できなくなります。 高可用性を確保するために、クラスターの作成時に複数のマスターを選択するのが理想です。\\n  \\n",
+            "category": "AzureContainerServices",
+            "id": "f452c0f8-ab2f-4d35-860d-999dc5338438",
+            "question": "クラスターの作成後にマスターの数を増やすにはどうすればよいですか。"
+        },
+        {
+            "answer": "クラスター内のエージェントの数は、Azure Portal またはコマンドライン ツールを使用して増やすことができます",
+            "category": "AzureContainerServices",
+            "id": "3704ea3f-eee9-48f0-8a52-ea5efb9bb2b1",
+            "question": "クラスターの作成後にエージェントの数を増やすにはどうすればよいですか。"
+        },
+        {
+            "answer": "Azure Container Service クラスター リソースの URL は、ユーザーが指定した DNS 名のプレフィックスと、ユーザーがデプロイ時に選択した Azure リージョンに基づいて設定されます。 たとえば、マスター ノードの完全修飾ドメイン名 (FQDN) は次のような形式になります。\\n  \\n\\n\\n``` \\n\\nDNSnamePrefix.AzureRegion.cloudapp.azure.net\\n\\n```\\n  \\n\\n\\nAzure Portal や Azure Resource Explorer などの Azure ツールではクラスターの URL が広く使用されています。",
+            "category": "AzureContainerServices",
+            "id": "5853ba13-99d5-4f6a-a0d1-838e39cf9f61",
+            "question": "マスターとクラスターの URL は何ですか。"
+        },
+        {
+            "answer": "* DC/OS: [Mesosphere のドキュメント](https://support.mesosphere.com/hc/en-us/articles/207719793-How-to-get-the-DCOS-version-from-the-command-line-)を参照してください\\n\\n* Docker Swarm: `docker version` を実行します\\n\\n* Kubernetes: `kubectl version` を実行します",
+            "category": "AzureContainerServices",
+            "id": "96b580b2-30f2-4c0d-ae9f-eadae84b71f2",
+            "question": "どのバージョンのオーケストレーターがクラスターで実行されているかを確認するには、どうすればよいですか。"
+        },
+        {
+            "answer": "現時点で Azure Container Service には、クラスターにデプロイしたオーケストレーターのバージョンをアップグレードするためのツールは用意されていません。 Container Service でそれ以降のバージョンがサポートされている場合は、新しいクラスターをデプロイできます。 他には、オーケストレーターに固有のツールがあれば、それを利用してデプロイ済みのクラスターをアップグレードするという方法もあります。 一例として、[DC/OS のアップグレード](https://dcos.io/docs/1.8/administration/upgrading/)に関するページを参照してください。",
+            "category": "AzureContainerServices",
+            "id": "c9b6a548-03bb-4c77-a07d-d7721c4fb863",
+            "question": "デプロイ後にオーケストレーターをアップグレードするには、どうすればよいですか。"
+        },
+        {
+            "answer": "* Docker Swarm: `docker version` を実行します\\n\\n* Kubernetes: `kubectl version` を実行します\\n  \\n\\n\\n### <a name=\"how-do-i-upgrade-the-orchestrator-after-deployment\"></a>デプロイ後にオーケストレーターをアップグレードするには、どうすればよいですか。\\n  \\n\\n\\n現時点で Azure Container Service には、クラスターにデプロイしたオーケストレーターのバージョンをアップグレードするためのツールは用意されていません。 Container Service でそれ以降のバージョンがサポートされている場合は、新しいクラスターをデプロイできます。 他には、オーケストレーターに固有のツールがあれば、それを利用してデプロイ済みのクラスターをアップグレードするという方法もあります。 一例として、[DC/OS のアップグレード](https://dcos.io/docs/1.8/administration/upgrading/)に関するページを参照してください。\\n\\n \\n\\n### <a name=\"where-do-i-find-the-ssh-connection-string-to-my-cluster\"></a>クラスターへの SSH 接続文字列はどこで確認できますか。\\n  \\n\\n\\n接続文字列は、Azure Portal か Azure コマンドライン ツールで確認できます。 \\n  \\n\\n\\n1. Azure Portal の場合は、クラスター デプロイのリソース グループに移動します。  \\n  \\n\\n\\n2. **[概要]** をクリックし、**[要点]** にある **[デプロイ]** のリンクをクリックします。 \\n  \\n\\n\\n3. **[デプロイ履歴]** ブレードで、名前が **microsoft-acs** で始まり、その後にデプロイ日が付加されているデプロイをクリックします。 例: microsoft-acs-201701310000  \\n  \\n\\n\\n4. **[概要]** ページの **[出力]** に、いくつかのクラスター リンクが用意されています。 **SSHMaster0** は、コンテナー サービス クラスター内の 1 つ目のマスターに対する SSH 接続文字列です。 \\n  \\n\\n\\n前述のとおり、Azure ツールを使用して、マスターの FQDN を確認することもできます。 マスターへの SSH 接続は、マスターの FQDN と、クラスターの作成時に指定したユーザー名を使用して作成します。 次に例を示します。\\n  \\n\\n\\n```bash\\n\\nssh userName@masterFQDN -A -p 22 \\n\\n```",
+            "category": "AzureContainerServices",
+            "id": "921a92b9-8ad4-48ad-bff1-0186c8a173dc",
+            "question": "クラスターへの SSH 接続文字列はどこで確認できますか。"
+        },
+        {
+            "answer": "SQL Database の現在のバージョンは V12 です。 バージョン V11 は廃止されました。",
+            "category": "SQLDatabase",
+            "id": "2ca2af5b-2aea-49c5-a76a-8a5a47441663",
+            "question": "SQL Database の現在のバージョンは何ですか。"
+        },
+        {
+            "answer": "Microsoft は、お客様の Basic、Standard、または Premium エディションの Microsoft Azure SQL Database (シングルまたはエラスティック) と Microsoft のインターネット ゲートウェイの間で 99.99% の時間接続できることを保証します。 詳細については、[SLA](http://azure.microsoft.com/support/legal/sla/) のページを参照してください。",
+            "category": "SQLDatabase",
+            "id": "65ca7d23-f5e8-4cb5-8c53-1208c11dcdf8",
+            "question": "SQL Database の SLA はどうなっていますか。"
+        },
+        {
+            "answer": "[Azure Portal](https://portal.azure.com) で **[SQL Server]** をクリックし、一覧からサーバーを選択して、**[パスワードのリセット]** をクリックします。",
+            "category": "SQLDatabase",
+            "id": "6730c978-bccf-4e49-b596-477e0faa6307",
+            "question": "サーバー管理者のパスワードをリセットするにはどうすればよいですか。"
+        },
+        {
+            "answer": "[データベースとログインの管理](sql-database-manage-logins.md)に関するページを参照してください。",
+            "category": "SQLDatabase",
+            "id": "afbed2a3-57e9-432e-a6a0-a09997b0bbde",
+            "question": "データベースとログインはどのように管理しますか。"
+        },
+        {
+            "answer": "「 [方法: ファイアウォール設定を構成する (SQL Database)](sql-database-configure-firewall-settings.md)」を参照してください。",
+            "category": "SQLDatabase",
+            "id": "827f438d-bfad-4c26-a5bf-1a83eb8043f0",
+            "question": "承認した IP アドレスにのみサーバーへのアクセスを許可するにはどうすればよいですか。"
+        },
+        {
+            "answer": "SQL Database では、予測可能な 1 時間単位のレートで、サービス階層と、Single Database の場合はパフォーマンス レベル、エラスティック プールの場合は eDTU の両方に基づいて請求が行われます。 実際の使用量は時間単位でコンピューティングされるため、表示される請求額は 1 時間分に満たない場合があります。 たとえば、1 か月間にデータベースが存在したのが 12 時間だった場合、請求書には半日分の使用が示されます。 また、請求書にはサービス階層とパフォーマンス レベルおよびプールあたりの eDTU の内訳が記載されるため、それぞれが 1 か月間に発生したデータベース日数を簡単に把握できます。",
+            "category": "SQLDatabase",
+            "id": "0fa7f947-875d-4fbf-8787-28cf7da8e836",
+            "question": "SQL Database の使用量は請求書にどのように表示されますか。"
+        },
+        {
+            "answer": "使用状況やデータベースがアクティブであったのが 1 時間未満であったことに関係なく、データベースが存在していた 1 時間単位で、その時間に使用された最上位のサービス階層とパフォーマンス レベルで課金は行われます。 たとえば、Single Database を作成し、それを 5 分後に削除した場合、請求書にはデータベース時間として 1 時間の請求が表示されます。 \\n  \\n\\n\\n例\\n  \\n\\n\\n* Basic データベースを作成し、それをすぐに Standard S1 にアップグレードした場合、最初の 1 時間分として Standard S1 のレートが課金されます。\\n\\n* データベースを午後 10 時 00 分に Basic から Premium にアップグレードし始めて、 午前 1 時 35 分にアップグレードが完了した場合、 翌日の午前 1 時 00 分から Premium 料金での課金が始まります。 \\n\\n* 午前 11 時 00 分に、データベースを Premium から Basic にダウングレードし始めて、 午後 2 時 15 分に完了した場合、Premium の料金が課金されるのは午後 3 時 00 分までで、それ以降は Basic の料金が課金されます。",
+            "category": "SQLDatabase",
+            "id": "bc456b44-6bc3-4557-8fed-bcf86693e787",
+            "question": "Single Database がアクティブであったのが 1 時間に満たない場合や上位のサービス階層の使用が 1 時間に満たない場合はどうなりますか。"
+        },
+        {
+            "answer": "エラスティック プールの料金は、[価格ページ](https://azure.microsoft.com/pricing/details/sql-database/)のプールあたりの最大 eDTU 数の部分に記載の単位に従い、請求書にエラスティック DTU (eDTU) として表示されます。 エラスティック プールでは、データベース単位の請求はありません。 課金は、使用量やプールがアクティブであったのが 1 時間に満たないということに関係なく、プールが存在していた時間の最上位の eDTU を使用して 1 時間単位で行われます。 \\n  \\n\\n\\n例\\n  \\n\\n\\n* 午前 11 時 18 分に 200 eDTU の Standard エラスティック プールを作成し、プールに 5 つのデータベースを追加した場合、午前 11 時から始まって、その日中は 1 時間 200 eDTU が 課金されます。\\n\\n* 2 日目には、データベース 1 が午前 5 時 5 分から 50 eDTU の消費を開始し、その日はそれが維持されます。 データベース 2 ～ 5 は、0 ～ 80 eDTU の間で変動します。 その日、その 1 日間異なる eDTU を消費するデータベースが他に 5 つ追加されました。 2 日目は、丸 1 日 200 eDTU が課金されます。 \\n\\n* 3 日目の午前 5 時に、 さらにデータベースが 15 追加されました。 1 日中データベースの使用量は増え、午後 8 時 5 分にプールの eDTU を 200 から 400 に増やすことに決めました。 午後 8 時まで 200 eDTU レベルで課金され、残りの 4 時間は 400 eDTU に増やされました。",
+            "category": "SQLDatabase",
+            "id": "30708a25-d410-42eb-a6fc-dd6075c646f2",
+            "question": "エラスティック プールの使用量は請求書にどのように表示されますか。プールあたりの eDTU を変更した場合どうなりますか。"
+        },
+        {
+            "answer": "エラスティック プールは、次の特性ごとに課金されます。\\n  \\n\\n\\n* エラスティック プールは、プールにデータベースがない場合でも、その作成時に課金されます。\\n\\n* エラスティック プールは 1 時間ごとに課金されます。 これは、シングル データベースのパフォーマンス レベルと同じ使用状況測定の頻度です。\\n\\n* エラスティック プールのサイズが変更され、eDTU の数が変わった場合には、サイズ変更の操作が完了するまでは新しい eDTU の量に応じた課金はされません。 これは、Single Database のパフォーマンス レベルを変更する場合と同様のパターンに従っています。\\n\\n* エラスティック プールの価格は、プールの eDTU 数に基づきます。 エラスティック プールの価格は、内部のエラスティック データベースの数および使用率とは関係ありません。\\n\\n* 価格は、(プールの eDTU 数) x (eDTU あたりの単価) で計算されます。\\n  \\n\\n\\nエラスティック プールの eDTU 単価は、同じサービス階層の Single Database の DTU 単価よりも高くなります。 詳細については、「 [SQL Database の価格](https://azure.microsoft.com/pricing/details/sql-database/)」をご覧ください。 \\n  \\n\\n\\neDtu およびサービス レベルについては、 [SQL Database のオプションとパフォーマンス](sql-database-service-tiers.md)に関するページをご覧ください。\\n  \\n",
+            "category": "SQLDatabase",
+            "id": "cebd7748-7c96-4517-91bf-78758f2c05c9",
+            "question": "エラスティック プールの課金と価格情報"
+        },
+        {
+            "answer": "エラスティック データベースで [アクティブ geo レプリケーション](sql-database-geo-replication-overview.md) を使用した場合、単一データベースとは異なり、請求書には直接の影響はありません。  各プール (プライマリ プールおよびセカンダリ プール) にプロビジョニングされた eDTU に対してのみ課金されます。\\n  \\n",
+            "category": "SQLDatabase",
+            "id": "5280bfca-ded2-459c-ba2a-ecfce4ca2fc1",
+            "question": "エラスティック プールでアクティブ geo レプリケーションを使用した場合、請求書にはどのように表示されますか。"
+        },
+        {
+            "answer": "監査機能は、追加料金なしで SQL Database サービスに組み込まれており、Basic、Standard、Premium、および Premium RS データベースで利用可能です。 ただし、監査ログを保存する場合、監査機能は Azure Storage アカウントを使用するので、監査ログのサイズに応じて Azure Storage のテーブルとキューの料金が課されます。",
+            "category": "SQLDatabase",
+            "id": "66868541-d14d-4521-b78b-af1d3bf88ffb",
+            "question": "監査機能を使用すると請求書にどのような影響がありますか。"
+        },
+        {
+            "answer": "使用できるツールが少数あります。 \\n  \\n\\n\\n* オンプレミスのデータベースの場合、必要なデータベースと DTU の推奨を行い、エラスティック プール用の複数のデータベースを評価する、[DTU サイズ設定サポート ツール](http://dtucalculator.azurewebsites.net/)を使用できます。\\n\\n* 使用履歴からプールの Single Database に利点があると判断された場合、Azure インテリジェント エンジンはエラスティック プールを推奨します。 「[Azure Portal を使用したエラスティック プールの監視と管理](sql-database-elastic-pool-manage-portal.md)」を参照してください。 自分で計算する方法については、[エラスティック プールの価格およびパフォーマンスに関する考慮事項](sql-database-elastic-pool.md)を参照してください。\\n\\n* Single Database の調整については、「 [Single Database のパフォーマンス ガイダンス](sql-database-performance-guidance.md)」を参照してください。",
+            "category": "SQLDatabase",
+            "id": "1b432ff2-72d1-4826-a245-eb9ef12b03a2",
+            "question": "Single Database とエラスティック プールに適したサービス階層とパフォーマンス レベルはどのように調べることができますか。"
+        },
+        {
+            "answer": "サービス階層 (Basic、Standard、Premium、および Premium RS) または (S1 から S2 などの) サービス階層のパフォーマンス レベルは、必要な回数だけ変更できます。 以前のバージョンのデータベースでは、サービス階層またはパフォーマンス レベルは、24 時間で合計 4 回変更できます。",
+            "category": "SQLDatabase",
+            "id": "39a799e1-b117-45aa-9aa4-2628d7a27a04",
+            "question": "Single Database のサービス階層またはパフォーマンス レベルは何回変更できますか。"
+        },
+        {
+            "answer": "頻度に制限はありません。必要なだけ調整できます。",
+            "category": "SQLDatabase",
+            "id": "fd838d9c-c20e-4260-86e9-a09733d0ffe7",
+            "question": "各プールの eDTU はどのくらいの頻度で調整できますか。"
+        },
+        {
+            "answer": "データベースのサービス階層の変更やそれのプールからの出し入れでは、バック グラウンド操作でプラットフォームにデータベースをコピーする必要があります。 サービス階層の変更は、データベースのサイズに応じて数分から数時間かかることがあります。 いずれの場合も、データベースはオンラインを維持し、移動中も使用できます。 Single Database の変更の詳細については、「 [データベースのサービス階層の変更](sql-database-service-tiers.md)」を参照してください。",
+            "category": "SQLDatabase",
+            "id": "e3c53417-d1b8-48bc-9a08-d09778e58979",
+            "question": "Single Database のサービス階層またはパフォーマンス レベルの変更や、エラスティック プールからのデータベースの出し入れには、どれくらいの時間がかかりますか。"
+        },
+        {
+            "answer": "一般に、エラスティック プールは、典型的な[サービスとしてのソフトウェア (SaaS) アプリケーションのパターン](sql-database-design-patterns-multi-tenancy-saas-applications.md)用に設計されており、データベースは顧客またはテナントごとに 1 つです。 個々のデータベースを購入し、さまざまな、またはピーク時の需要に合わせてオーバープロビジョニングすることはコスト効率がよくありません。 プールを使用すると、プールでパフォーマンスは全体的に管理され、データベースは自動的にスケールアップおよびダウンされます。 使用パターンから利益があると判断される場合、Azure インテリジェント エンジンはデータベースにプールを推奨します。 詳しくは、「[エラスティック プールの使用に適した状況](sql-database-elastic-pool.md)」をご覧ください。",
+            "category": "SQLDatabase",
+            "id": "80586252-1ee3-4d7d-8127-28f20da2fc3f",
+            "question": "Single Database と Elastic Database はどのように使い分けできますか。"
+        },
+        {
+            "answer": "バックアップ ストレージは、[ポイントインタイム リストア](sql-database-recovery-using-backups.md#point-in-time-restore)と [geo リストア](sql-database-recovery-using-backups.md#geo-restore)に使用される自動化されたデータベース バックアップに関連付けられたストレージです。 Microsoft Azure SQL Database は、バックアップ ストレージとして、プロビジョニングされている最大のデータベース ストレージの 200% までを追加のコストなしで提供します。 たとえば、プロビジョニングされたデータベース サイズが 250 GB の Standard データベース インスタンスの場合、500 GB のバックアップ ストレージが追加のコストなしで提供されます。 提供されるバックアップ ストレージをデータベースが超過している場合は、Azure サポートに連絡して保有期間を短縮するか、または読み取りアクセスのジオ (主要地域) 冗長ストレージ (RA-GRS) の標準料金をお支払いいただいてバックアップ ストレージを追加することができます。 RA-GRS の請求の詳細については、「Storage の料金詳細」を参照してください。",
+            "category": "SQLDatabase",
+            "id": "6c0ef7a7-904e-430a-a023-bdb8bb17ad14",
+            "question": "バックアップ ストレージとして、プロビジョニングされている最大のデータベース ストレージの 200% までが提供されるというのはどういう意味ですか。"
+        },
+        {
+            "answer": "現在、5 秒間の RPO をサポートしているため、geo セカンダリが Azure 推奨のペアになっているリージョンでホストされ、同じサービス レベルである限り、レプリケーションの遅延はそれより短くなっています。\\n  \\n",
+            "category": "SQLDatabase",
+            "id": "03fe75b7-7d25-4c70-82f2-f84083601dd7",
+            "question": "Web または Business を新しいサービス階層に移行する際に何を理解しておけばよいでしょうか。"
+        },
+        {
+            "answer": "実験データによれば、Azure 推奨のペアになっているリージョンが使用されている場合は、リージョン内およびリージョン間のレプリケーションの遅延に大きな差はありません。",
+            "category": "SQLDatabase",
+            "id": "b5c827cb-d3cc-4e32-a12b-9980eba2f0f0",
+            "question": "geo セカンダリをプライマリ データベースと同じリージョンに作成する場合に予想されるレプリケーションの遅延はどのくらいですか。"
+        },
+        {
+            "answer": "接続が切断されると、接続を再確立するために 10 秒ごとに再試行します。",
+            "category": "SQLDatabase",
+            "id": "2e8a3216-f810-4cac-aac5-62197a550fc1",
+            "question": "geo レプリケーションが設定されている場合、2 つのリージョン間にネットワーク エラーが発生すると、再試行ロジックはどのように動作しますか。"
+        },
+        {
+            "answer": "geo セカンダリは非同期レプリカであり、プライマリとの完全な同期を維持しようとはしていません。 ただし、重要な変更 (パスワードの更新など) を確実にレプリケートするために、強制同期を行う方法が用意されています。 強制同期を実行すると、コミットされたトランザクションがすべてレプリケートされるまで呼び出しスレッドがブロックされるため、パフォーマンスに影響します。 詳細については、[sp_wait_for_database_copy_sync](https://msdn.microsoft.com/library/dn467644.aspx) に関するページをご覧ください。",
+            "category": "SQLDatabase",
+            "id": "c984d4d6-f0ee-4040-8706-0c760ecda26f",
+            "question": "プライマリ データベースでの重要な変更がレプリケートされていることを保証するには、どうすればよいでしょうか。"
+        },
+        {
+            "answer": "[Azure Portal](https://portal.azure.com) で **[SQL データベース]** をクリックし、一覧からデータベースを選択してから、**[コピー]** をクリックします。 詳細については、「 [Azure SQL データベースのコピー](sql-database-copy.md) 」を参照してください。",
+            "category": "SQLDatabase",
+            "id": "ecb9c303-979f-4abc-b9e5-ecfea76c92b5",
+            "question": "同じサブスクリプション内の別のサーバーにデータベースを移動するには"
+        },
+        {
+            "answer": "[Azure Portal](https://portal.azure.com) で **[SQL Server]** をクリックし、一覧からデータベースをホストするサーバーを選択します。 **[移動]**をクリックし、移動するリソースと移動先のサブスクリプションを選択します。",
+            "category": "SQLDatabase",
+            "id": "61d476fc-35ee-4312-b81d-3a9701abdcfe",
+            "question": "サブスクリプション間でデータベースを移動するには"
+        }
+    ]
+}
