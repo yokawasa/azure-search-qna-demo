@@ -8,7 +8,7 @@ fi
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/azure.conf
+. $cwd/search.conf
 
 curl -H "Content-Type: application/json" \
      -H "api-key: $AZURE_SEARCH_ADMIN_KEY" \

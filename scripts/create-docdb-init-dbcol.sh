@@ -2,7 +2,7 @@
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/azure.conf
+. $cwd/docdb.conf
 
 echo "Start Creating DocumentDB DB: $DOCDB_DB and Collection: $DOCDB_COLLECTION  ...."
 

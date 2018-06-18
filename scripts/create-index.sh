@@ -23,12 +23,12 @@
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/azure.conf
+. $cwd/search.conf
 
 curl -s\
  -H "Content-Type: application/json"\
  -H "api-key: $AZURE_SEARCH_ADMIN_KEY"\
- -XPOST "https://$AZURE_SEARCH_SERVICE_NAME.search.windows.net/indexes?api-version=2016-09-01" \
+ -XPOST "https://$AZURE_SEARCH_SERVICE_NAME.search.windows.net/indexes?api-version=$AZURE_SEARCH_API_VER" \
  -d'{
     "name": "qna",
     "fields": [

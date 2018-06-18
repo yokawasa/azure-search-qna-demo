@@ -7,7 +7,7 @@
 
 cwd=`dirname "$0"`
 expr "$0" : "/.*" > /dev/null || cwd=`(cd "$cwd" && pwd)`
-. $cwd/azure.conf
+. $cwd/search.conf
 
 echo "Start Creating Indexer: $AZURE_SEARCH_INDEXER_NAME ...."
 
