@@ -9,7 +9,7 @@ var sessions = new Bloodhound({
     queryTokenizer: Bloodhound.tokenizers.whitespace,
     remote: {
         url: AzureSearchServiceUrl
-          + "/indexes/qna/docs/suggest?api-version=2016-09-01"
+          + "/indexes/qna/docs/suggest?api-version=2017-11-11"
           + "&suggesterName=questionsg&$select=question&$top=10&fuzzy=true&search=%q",
         filter: function (qnas) {
             // Map the remote source JSON array to a JavaScript object array
@@ -47,7 +47,7 @@ $('.input-group .form-control').typeahead({
 function execSearch(category_name)
 {
 	var searchAPI = AzureSearchServiceUrl
-                 + "/indexes/qna/docs?api-version=2016-09-01"
+                 + "/indexes/qna/docs?api-version=2017-11-11"
                  + "&$top=50&$select=id,question,answer,category&$count=true&highlight=question,answer"
                  + "&facet=category,count:10"
                  + "&searchMode=any&queryType=full"
