@@ -41,7 +41,7 @@ Q and A Knowledge Base Search Application Demo using Azure Search
 ## Configuration for Data Ingestion
 You want to create the Azure Search Index and uploading Sample QnA Data
 
-### 1. Configure scripts/azure.conf
+### 1. Configure scripts/search.conf
 ```
 AZURE_SEARCH_SERVICE_NAME='<Azure Search Service name>'
 AZURE_SEARCH_API_VER='2016-09-01'
@@ -66,14 +66,8 @@ post-data.sh ../data/qna-data.json
 
 ## Configuration for Cosmos DB Indexer (Optional)
 
-### 1. Configure scripts/azure.conf
+### 1. Configure scripts/docdb.conf
 ```
-AZURE_SEARCH_SERVICE_NAME='<Azure Search Service name>'
-AZURE_SEARCH_API_VER='2016-09-01'
-AZURE_SEARCH_ADMIN_KEY='<Azure Search API Admin Key>'
-AZURE_SEARCH_INDEX_NAME='<Azure Search Index Name>'
-AZURE_SEARCH_INDEXER_NAME='<Azure Search Indexer Name>'
-AZURE_SEARCH_INDEXER_DATASOURCE_NAME='<Azure Search Indexer DataSource Name>'
 DOCDB_HOST='https://<DocumentDB_Account_Name>.documents.azure.com:443/'
 DOCDB_DB='<DocumentDB Database Name>'
 DOCDB_COLLECTION='<DocumentDB Collection Name>'
@@ -100,3 +94,14 @@ var AzureSearchQueryApiKey = "<AzureSearchQueryKey>";
 var AzureSearchServiceUrl = "https://<AzureSearchServiceName>.search.windows.net"
 ```
 
+
+## Test Scripts
+- [検索クエリー:GET,Simple,キーワード1](scripts/search-get-simple1.sh)
+- [検索クエリー:GET,Simple,キーワード2](scripts/search-get-simple2.sh) 
+- [検索クエリー:GET,Lucene,キーワード1](scripts/search-post-simple1.sh) 
+- [検索クエリー:GET,Lucene,キーワード2](scripts/search-post-simple2.sh) 
+- [検索クエリー:GET,Lucene,フィールドスコープ](scripts/search-post-full-field-scope.sh) 
+- [検索クエリー:GET,Lucene,あいまい検索](scripts/search-post-full-fuzzy.sh) 
+- [検索クエリー:GET,Lucene,近似検索](scripts/search-post-full-proximiy.sh)
+- [検索クエリー:ファセット付き](scripts/search-with-facet.sh)
+- [サジェストクエリー][scripts/suggest.sh]
