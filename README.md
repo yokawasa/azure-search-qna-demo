@@ -96,12 +96,12 @@ var AzureSearchServiceUrl = "https://<AzureSearchServiceName>.search.windows.net
 
 
 ## Test Scripts
-- [検索クエリー:GET,Simple,キーワード1](scripts/search-get-simple1.sh)
-- [検索クエリー:GET,Simple,キーワード2](scripts/search-get-simple2.sh) 
-- [検索クエリー:GET,Lucene,キーワード1](scripts/search-post-simple1.sh) 
-- [検索クエリー:GET,Lucene,キーワード2](scripts/search-post-simple2.sh) 
-- [検索クエリー:GET,Lucene,フィールドスコープ](scripts/search-post-full-field-scope.sh) 
-- [検索クエリー:GET,Lucene,あいまい検索](scripts/search-post-full-fuzzy.sh) 
-- [検索クエリー:GET,Lucene,近似検索](scripts/search-post-full-proximiy.sh)
+- [検索クエリー:GET/Simple/キーワード1](scripts/search-get-simple1.sh)
+- [検索クエリー:GET/Simple/キーワード2](scripts/search-get-simple2.sh) 
+- [検索クエリー:GET/Lucene/キーワード1](scripts/search-post-simple1.sh) 
+- [検索クエリー:GET/Lucene/キーワード2](scripts/search-post-simple2.sh) 
+- [検索クエリー:GET/Lucene/フィールドスコープ](scripts/search-post-full-field-scope.sh) 
+- [検索クエリー:GET/Lucene/あいまい検索](scripts/search-post-full-fuzzy.sh) 
+- [検索クエリー:GET/Lucene/近似検索](scripts/search-post-full-proximiy.sh)
 - [検索クエリー:ファセット付き](scripts/search-with-facet.sh)
-- [サジェストクエリー][scripts/suggest.sh]
+- [サジェストクエリー][scripts/suggest.sh]
