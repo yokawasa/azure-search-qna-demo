@@ -51,7 +51,7 @@ function execSearch(category_name)
                  + "&$top=50&$select=id,question,answer,category&$count=true&highlight=question,answer"
                  + "&facet=category,count:10"
                  + "&searchMode=any&queryType=full"
-                 + "&search=" + encodeURIComponent($("#q").val() + '~1' );
+                 + "&search=" + encodeURIComponent($("#q").val());
     if ( typeof category_name !== "undefined" ) {
         searchAPI += "&$filter=" + encodeURIComponent("category eq '" + category_name + "'");
     }
