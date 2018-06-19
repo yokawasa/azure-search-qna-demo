@@ -104,4 +104,4 @@ var AzureSearchServiceUrl = "https://<AzureSearchServiceName>.search.windows.net
 - [検索クエリー:GET/Lucene/あいまい検索](scripts/search-post-full-fuzzy.sh) 
 - [検索クエリー:GET/Lucene/近似検索](scripts/search-post-full-proximiy.sh)
 - [検索クエリー:ファセット付き](scripts/search-with-facet.sh)
-- [サジェストクエリー][scripts/suggest.sh]
+- [サジェストクエリー](scripts/suggest.sh)
